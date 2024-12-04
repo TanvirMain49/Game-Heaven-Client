@@ -1,9 +1,30 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo1 from "../assets/logo1.png";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Header = () => {
+  const { user, signOutUser } = useContext(AuthContext);
   const location = useLocation();
+  const navigation = useNavigate();
+  const handleLogOut = () => {
+    signOutUser()
+      .then((res) => {
+        Swal.fire({
+          title: "logged Out successfully",
+          icon: "success",
+        });
+        navigation("/login");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
+      });
+  };
 
   const isHomePage = location.pathname === "/";
 
@@ -60,12 +81,38 @@ const Header = () => {
       </div>
 
       <div className="navbar-end gap-3">
-        <NavLink className="btn bg-[#FF204E] text-white border-none">
-          Log in
-        </NavLink>
-        <NavLink className="btn bg-[#FF204E] text-white border-none">
-          Register
-        </NavLink>
+        {user ? (
+          <>
+            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+              <img
+                src={user.photoURL}
+                alt=""
+                className="w-16 h-16 rounded-full border-2 border-green-500 p-1"
+              />
+            </div>
+            <button
+              onClick={handleLogOut}
+              className="btn bg-[#FF204E] text-white border-none"
+            >
+              Log out
+            </button>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              className="btn bg-[#FF204E] text-white border-none"
+            >
+              Log in
+            </Link>
+            <NavLink
+              to="/register"
+              className="btn bg-[#FF204E] text-white border-none"
+            >
+              Register
+            </NavLink>
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,38 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AddReview = () => {
+  const handleAddReview = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const userName = form.name.value;
+    const email = form.email.value;
+    const title = form.title.value;
+    const image = form.image.value;
+    const rating = form.rating.value;
+    const publishingYear = form.publishingYear.value;
+    const genre = form.genre.value;
+    const description = form.description.value;
 
-    const handleAddReview = (e) =>{
-        e.preventDefault();
-        const form = e.target;
-        const userName = form.name.value;
-        const email = form.email.value;
-        const title = form.title.value;
-        const image = form.image.value;
-        const rating = form.rating.value;
-        const publishingYear = form.publishingYear.value;
-        const genre = form.genre.value;
-        const description = form.description.value;
+    const review = {
+      userName,
+      email,
+      title,
+      image,
+      rating,
+      publishingYear,
+      genre,
+      description,
+    };
+    // console.log(review);
 
-        const review = {userName, email, title, image, rating, publishingYear, genre, description};
-        // console.log(review);
-
-        //send data to the server and get response
-        fetch('http://localhost:5000/reviews', {
-            method: "POST",
-            headers: {
-                "content-type":"application/json"
-            },
-            body: JSON.stringify(review)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-
-    }
+    //send data to the server and get response
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <div className="h-screen">
+      <Link to="/" className="btn bg-[#FF204E] text-white border-none font-bold md:ml-[20.5%] mt-8">
+        Back to Home
+      </Link>
       <div className="max-w-4xl mx-auto p-8 border-2 border-gray-300 mt-8 bg-gray-50 rounded-xl">
         <h1 className="text-2xl font-bold text-center mb-6">Add New Review</h1>
 
@@ -43,7 +54,10 @@ const AddReview = () => {
           feedback helps other gamers make informed decisions.
         </p>
 
-        <form onSubmit={handleAddReview} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form
+          onSubmit={handleAddReview}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
           {/* User Name*/}
           <div className="col-span-1">
             <label className="block text-sm font-medium text-gray-700 col-span-2">
@@ -53,7 +67,7 @@ const AddReview = () => {
               type="text"
               placeholder="name"
               name="name"
-            //   readOnly
+              //   readOnly
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
             />
           </div>
@@ -70,7 +84,7 @@ const AddReview = () => {
               type="email"
               placeholder="email"
               name="email"
-            //   readOnly
+              //   readOnly
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
             />
           </div>
@@ -164,7 +178,7 @@ const AddReview = () => {
           <div className="col-span-2">
             <button
               type="submit"
-              className="w-full bg-[#FF204E] text-white py-2 rounded-md shadow-sm"
+              className="w-full bg-[#FF204E] text-white py-2 mt-6 mb-3 rounded-md shadow-sm"
             >
               Submit Review
             </button>
