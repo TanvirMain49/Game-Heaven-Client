@@ -1,12 +1,14 @@
-import { FcRating } from "react-icons/fc";
+import React from 'react';
 import { MdGames, MdCategory, MdCalendarToday } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { FcRating } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
-const TopRatedCard = ({ review }) => {
-  const { _id, title, image, rating, publishingYear, genre, description } = review;
+const AllReviewCard = ({loadReview}) => {
 
-  return (
-    <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg hover:shadow-lg border-2 border-gray-300">
+    const { _id, title, image, rating, publishingYear, genre } = loadReview;
+
+    return (
+        <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg hover:shadow-lg border-2 border-gray-300">
       <img src={image} className="h-72 w-full object-cover" alt={title} />
 
       {/* Game Title with Icon */}
@@ -46,7 +48,7 @@ const TopRatedCard = ({ review }) => {
         Explore Details
       </Link>
     </div>
-  );
+    );
 };
 
-export default TopRatedCard;
+export default AllReviewCard;

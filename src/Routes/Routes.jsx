@@ -6,6 +6,8 @@ import Register from "../Pages/Register";
 import Home from "../Pages/Home";
 import CardDetails from "../Pages/CardDetails";
 import WatchList from "../Pages/WatchList";
+import MyReviews from "../Pages/MyReviews";
+import AllReviews from "../Pages/AllReviews";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,18 @@ const router = createBrowserRouter([
           path:'/watchList',
           element:<WatchList></WatchList>,
           loader: ()=> fetch('http://localhost:5000/watchLists')
+          
+        },
+        {
+          path:'/myReview',
+          element:<MyReviews></MyReviews>,
+          //fetch('http://localhost:5000/reviews')
+          
+        },
+        {
+          path:'/allReviews',
+          element:<AllReviews></AllReviews>,
+          loader: ()=> fetch('http://localhost:5000/reviews')
           
         },
       ]
