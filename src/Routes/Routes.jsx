@@ -4,6 +4,8 @@ import AddReview from "../Components/AddReview";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Home from "../Pages/Home";
+import CardDetails from "../Pages/CardDetails";
+import WatchList from "../Pages/WatchList";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +28,17 @@ const router = createBrowserRouter([
         {
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/reviews/:id',
+          element:<CardDetails></CardDetails>,
+          loader:({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+        },
+        {
+          path:'/watchList',
+          element:<WatchList></WatchList>,
+          loader: ()=> fetch('http://localhost:5000/watchLists')
+          
         },
       ]
     },

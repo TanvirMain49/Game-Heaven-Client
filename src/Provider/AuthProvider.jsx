@@ -9,9 +9,10 @@ export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
      // State to hold the current authenticated user
     const [user, setUser] = useState(null);
-    const[loader, setLoader] = useState(true);
+    const[loader, setLoader] = useState(false);
     const [forgetEmail, setForgetEmail] = useState(null);
-    console.log(user);
+    const[watchList, setWatchList] = useState(null);
+    console.log(watchList);
 
     // function to create user
     const createUser = (email, password) =>{
@@ -67,7 +68,9 @@ const AuthProvider = ({children}) => {
         forgetEmail,
         forgetPassword,
         user,
-        loader
+        loader,
+        setWatchList,
+        watchList
     }
     return (
         <AuthContext.Provider value={authInfo}>
