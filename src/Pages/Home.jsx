@@ -11,7 +11,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <TopRatedGames></TopRatedGames>
-            <div className='grid grid-col-1 md:grid-cols-3 w-11/12 mx-auto my-12 items-center justify-center'>
+            <div className='grid grid-col-1 md:grid-cols-3 gap-8 w-10/12 mx-auto my-12 items-center justify-center'>
                 {
                     reviews.map(review =><TopRatedCard key={review._id} review={review}></TopRatedCard>)
                 }

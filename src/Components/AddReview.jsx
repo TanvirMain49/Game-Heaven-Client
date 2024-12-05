@@ -1,7 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddReview = () => {
+  const{user} = useContext(AuthContext);
+  const navigation = useNavigate();
+  console.log(user);
   const handleAddReview = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -37,6 +42,11 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        Swal.fire({
+          title: "Successfully added!",
+          icon: "success"
+        });
+        navigation('/')
       });
   };
   return (
@@ -67,7 +77,8 @@ const AddReview = () => {
               type="text"
               placeholder="name"
               name="name"
-              //   readOnly
+              readOnly
+              defaultValue={user?.displayName}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
             />
           </div>
@@ -84,7 +95,8 @@ const AddReview = () => {
               type="email"
               placeholder="email"
               name="email"
-              //   readOnly
+              readOnly
+              defaultValue={user?.email}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
             />
           </div>

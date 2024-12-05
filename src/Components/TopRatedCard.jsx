@@ -1,14 +1,15 @@
-import React from "react";
-import { FcCalendar, FcRating } from "react-icons/fc";
+import {  FcRating } from "react-icons/fc";
 import { MdGames } from "react-icons/md";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const TopRatedCard = ({ review }) => {
+
   const { title, image, rating, publishingYear, genre, description } = review;
   console.log(image);
 
   return (
-    <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg">
+    <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg hover:shadow-lg border-2 border-gray-300">
       <img src={image} className="h-72 w-full object-cover" alt={title} />
 
       <div className="flex items-center px-6 py-3 bg-[#00224D]">
@@ -35,7 +36,7 @@ const TopRatedCard = ({ review }) => {
       </div>
       <Link
         to="/register"
-        className="btn border-2 bg-gray-100 border-[#FF204E] text-[#FF204E] font-bold mx-6 mb-6"
+        className="btn border-2 bg-gray-100 border-[#FF204E] text-[#FF204E] font-bold mx-6 mb-6 hover:bg-[#FF204E] hover:text-white transition ease-out duration-300 hover:shadow-gray-400 hover:shadow-lg hover:border-[#FF204E]"
       >
         Explore Details
       </Link>
