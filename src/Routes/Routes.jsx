@@ -8,6 +8,9 @@ import CardDetails from "../Pages/CardDetails";
 import WatchList from "../Pages/WatchList";
 import MyReviews from "../Pages/MyReviews";
 import AllReviews from "../Pages/AllReviews";
+import UpdateReview from "../Pages/UpdateReview";
+import PrivetRoutes from "./PrivetRoutes";
+import Error404 from "../Pages/Error404";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +24,9 @@ const router = createBrowserRouter([
         },
         {
           path:'/addReview',
-          element:<AddReview></AddReview>
+          element:<PrivetRoutes>
+            <AddReview></AddReview>
+          </PrivetRoutes>
         },
         {
           path:'/logIn',
@@ -38,14 +43,17 @@ const router = createBrowserRouter([
         },
         {
           path:'/watchList',
-          element:<WatchList></WatchList>,
+          element:<PrivetRoutes>
+            <WatchList></WatchList>
+          </PrivetRoutes>,
           loader: ()=> fetch('http://localhost:5000/watchLists')
           
         },
         {
           path:'/myReview',
-          element:<MyReviews></MyReviews>,
-          //fetch('http://localhost:5000/reviews')
+          element:<PrivetRoutes>
+            <MyReviews></MyReviews>
+          </PrivetRoutes>,
           
         },
         {
@@ -54,8 +62,19 @@ const router = createBrowserRouter([
           loader: ()=> fetch('http://localhost:5000/reviews')
           
         },
+        {
+          path:'/updateReview/:id',
+          element:<UpdateReview></UpdateReview>,
+          loader: ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+          
+          
+        },
       ]
     },
+    {
+      path:"*",
+      element:<Error404></Error404>
+    }
   ]);
 
 export default router;

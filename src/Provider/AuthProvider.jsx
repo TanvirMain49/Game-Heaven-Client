@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
-import auth from '../FireBase/FireBase.init';
+import auth from '../FireBase/Firebase.init';
 
 
 
@@ -9,7 +9,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
      // State to hold the current authenticated user
     const [user, setUser] = useState(null);
-    const[loader, setLoader] = useState(false);
+    const[loader, setLoader] = useState(true);
     const [forgetEmail, setForgetEmail] = useState(null);
     const[watchList, setWatchList] = useState(null);
     console.log(watchList);

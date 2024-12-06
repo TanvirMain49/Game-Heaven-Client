@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEdit, FaPen, FaRegStar, FaStar, FaTrashAlt } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const [myReviews, setMyReviews] = useState([]);
   const { user } = useContext(AuthContext);
   const email = user?.email;
-  console.log(email);
+  // console.log(email);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myReviews/${email}`, {
@@ -18,8 +20,33 @@ const MyReviews = () => {
         setMyReviews(data);
       });
   }, []);
+  // console.log(myReviews);
 
-  console.log(myReviews);
+
+  const handleDelete =(id)=>{
+    console.log(id);
+    fetch(`http://localhost:5000/reviews/${id}`, {
+      method: "DELETE"
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      if(data.deletedCount > 0){
+        fetch(`http://localhost:5000/myReviews/${email}`, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setMyReviews(data);
+          });
+        Swal.fire({
+          title: "Deleted done successfully",
+          icon: "success",
+        });
+      }
+    })
+  }
 
   return (
     <div>
@@ -67,13 +94,13 @@ const MyReviews = () => {
                     <FaTrashAlt className="inline-block mr-1" />
                     Delete
                   </button>
-                  <button
-                    onClick={() => handleDelete(review._id)}
+                  <Link
+                    to={`/updateReview/${review._id}`}
                     className="bg-black text-white btn"
                   >
                     <FaPen className="inline-block mr-1" />
                     Edit
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}

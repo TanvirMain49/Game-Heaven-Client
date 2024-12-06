@@ -75,9 +75,13 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1 space-x-4">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/allReviews">All Reviews</NavLink>
-          <NavLink to="/addReview">Add Review</NavLink>
-          <NavLink to="/myReview">My Review</NavLink>
-          <NavLink to="/watchList">Game WatchList</NavLink>
+          {user && (
+            <>
+              <NavLink to="/addReview">Add Review</NavLink>
+              <NavLink to="/myReview">My Review</NavLink>
+              <NavLink to="/watchList">Game WatchList</NavLink>
+            </>
+          )}
         </ul>
       </div>
 
