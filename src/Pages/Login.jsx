@@ -55,7 +55,7 @@ const Login = () => {
       {/* img section */}
       <div className="w-[75%]">
         <img
-          src="https://i.ibb.co.com/9q5KMPg/wallpaperflare-com-wallpaper-5.jpg"
+          src="https://wallpapers-clan.com/wp-content/uploads/2024/07/mass-effect-game-character-desktop-wallpaper-preview.jpg"
           alt=""
           className="w-full h-screen object-cover"
         />
@@ -76,7 +76,7 @@ const Login = () => {
                 type="email"
                 placeholder="email"
                 name="email"
-                className="border-y-2 px-3 py-2 hover:input-border hover:border my-3"
+                className="border-y-2 px-3 py-2 my-3"
                 required
               />
             </div>
@@ -88,7 +88,7 @@ const Login = () => {
                 type="password"
                 placeholder="password"
                 name="password"
-                className="border-y-2 px-3 py-2 hover:input-border hover:border mb-3"
+                className="border-y-2 px-3 py-2 mb-3"
                 required
               />
               <label className="label">

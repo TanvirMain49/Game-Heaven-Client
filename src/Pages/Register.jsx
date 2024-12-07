@@ -76,76 +76,77 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-12">
-        <form onSubmit={handleRegister} className="card-body">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Name</span>
-            </label>
-            <input
-              type="text"
-              placeholder="name"
-              name="name"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              type="email"
-              placeholder="email"
-              name="email"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">PhotoURL</span>
-            </label>
-            <input
-              type="text"
-              placeholder="photoURL"
-              name="photoURL"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              type="password"
-              placeholder="password"
-              name="password"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control mt-3 space-y-4">
-            <button className="btn btn-primary">Login</button>
-          </div>
-        </form>
+    <div className="flex gap-8">
+      {/* form section */}
+      <div className="RegisterForm">
+        <div className="card w-full mx-auto">
+          <form onSubmit={handleRegister} className="card-body">
+            <h1 className="text-2xl font-bold pt-8 pb-4 text-center">
+              Register Here!
+            </h1>
+            <div className="form-control space-y-3">
+              <input
+                type="email"
+                placeholder="name"
+                name="name"
+                className="border-y-2 px-3 py-2 my-2"
+                required
+              />
+            </div>
+            <div className="form-control space-y-2">
+              <input
+                type="text"
+                placeholder="photoURL"
+                name="photoURL"
+                className="border-y-2 px-3 py-2 my-2"
+                required
+              />
+            </div>
+            <div className="form-control space-y-2">
+              <input
+                type="email"
+                placeholder="email"
+                name="email"
+                className="border-y-2 px-3 py-2 my-2"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <input
+                type="password"
+                placeholder="password"
+                name="password"
+                className="border-y-2 px-3 py-2 mb-2"
+                required
+              />
+            </div>
+            <div className="form-control mt-3 space-y-4">
+              <button className="btn bg-[#FF204E] font-bold text-white">
+                Register
+              </button>
+              <p className="text-bold text-center">
+                Do have an account? 
+                <Link
+                  to="/login"
+                  className="text-[#FF204E] cursor-pointer hover:underline ml-1"
+                >
+                  log in here
+                </Link>
+              </p>
+            </div>
+            {/* <div className="divider">OR</div>
+            <button onClick={handleGoogle} className="btn bg-[#FF204E] font-bold text-white">
+              <FaGoogle/>
+              Google
+            </button> */}
+          </form>
+
+        </div>
       </div>
-      <div className="flex justify-center items-center flex-col">
-        <p>
-          If you have an account then,
-          <Link
-            to="/login"
-            className="text-[#FF204E] cursor-pointer hover:underline"
-          >
-            login here
-          </Link>
-        </p>
-        <div className="border-b-2 border-gray-300"></div>
-        <button onClick={handleGoogle} className="btn btn-primary">
-          Google
-        </button>
+
+      {/* image section */}
+      <div className="">
+        <img src="https://wallpapers-clan.com/wp-content/uploads/2024/07/ghost-of-tsushima-battle-aesthetic-desktop-wallpaper-preview.jpg" alt="" />
       </div>
     </div>
   );
