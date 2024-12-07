@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { GrGoogle } from "react-icons/gr";
+import { FaGoogle } from "react-icons/fa6";
 
 const Login = () => {
   const { signInWithGoogle, logIn, setUser } = useContext(AuthContext);
@@ -33,11 +35,11 @@ const Login = () => {
     signInWithGoogle()
       .then((res) => {
         setUser(res.user);
-            Swal.fire({
-              title: "Registration Done successfully",
-              icon: "success",
-            });
-            navigation("/");
+        Swal.fire({
+          title: "Registration Done successfully",
+          icon: "success",
+        });
+        navigation("/");
       })
       .catch((error) => {
         Swal.fire({
@@ -49,57 +51,74 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-12">
-        <form onSubmit={handleLogIn} className="card-body">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              type="email"
-              placeholder="email"
-              name="email"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              type="password"
-              placeholder="password"
-              name="password"
-              className="input input-bordered"
-              required
-            />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
-          </div>
-          <div className="form-control mt-3 space-y-4">
-            <button className="btn btn-primary">Login</button>
-          </div>
-        </form>
+    <div className="flex gap-2">
+      {/* img section */}
+      <div className="w-[75%]">
+        <img
+          src="https://i.ibb.co.com/9q5KMPg/wallpaperflare-com-wallpaper-5.jpg"
+          alt=""
+          className="w-full h-screen object-cover"
+        />
       </div>
-      <div className="flex justify-center items-center flex-col">
-        <p>
-          Don't have an account?
-          <Link
-            to="/register"
-            className="text-[#FF204E] cursor-pointer hover:underline"
-          >
-            Register here
-          </Link>
-        </p>
-        <div className="border-b-2 border-gray-300"></div>
-        <button onClick={handleGoogle} className="btn btn-primary">
-          Google
-        </button>
+
+      {/* form section start */}
+      <div className="">
+        <div className="card w-full mx-auto">
+          <form onSubmit={handleLogIn} className="card-body">
+            <h1 className="text-2xl font-bold pt-16 pb-4 text-center">
+              Log in Here!
+            </h1>
+            <div className="form-control space-y-3">
+              {/* <label className="label">
+                <span className="label-text">Email</span>
+              </label> */}
+              <input
+                type="email"
+                placeholder="email"
+                name="email"
+                className="border-y-2 px-3 py-2 hover:input-border hover:border my-3"
+                required
+              />
+            </div>
+            <div className="form-control">
+              {/* <label className="label">
+                <span className="label-text">Password</span>
+              </label> */}
+              <input
+                type="password"
+                placeholder="password"
+                name="password"
+                className="border-y-2 px-3 py-2 hover:input-border hover:border mb-3"
+                required
+              />
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover">
+                  Forgot password?
+                </a>
+              </label>
+            </div>
+            <div className="form-control mt-3 space-y-4">
+              <button className="btn bg-[#FF204E] font-bold text-white">
+                Login
+              </button>
+              <p className="text-bold text-center">
+                Don't have an account?
+                <Link
+                  to="/register"
+                  className="text-[#FF204E] cursor-pointer hover:underline"
+                >
+                  Register here
+                </Link>
+              </p>
+            </div>
+            <div className="divider">OR</div>
+            <button onClick={handleGoogle} className="btn bg-[#FF204E] font-bold text-white">
+              <FaGoogle/>
+              Google
+            </button>
+          </form>
+
+        </div>
       </div>
     </div>
   );

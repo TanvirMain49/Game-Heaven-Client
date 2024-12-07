@@ -11,8 +11,6 @@ const CardDetails = () => {
   const cardLoader = useLoaderData();
   const { user, setWatchList, watchList } = useContext(AuthContext);
   const [liked, setLiked] = useState(false);
-  console.log(user);
-  console.log(cardLoader);
 
   const {
     _id,
@@ -27,11 +25,8 @@ const CardDetails = () => {
   } = cardLoader;
 
   const handleWatchList = (cardId) => {
-    console.log(cardId);
     const name = user.displayName;
     const email = user.email;
-
-    console.log(name, email);
 
     const newList = {
       cardId,
@@ -44,7 +39,6 @@ const CardDetails = () => {
       name,
       email,
     };
-    console.log(newList);
     fetch(`http://localhost:5000/watchLists`, {
       method: "POST",
       headers: {
@@ -54,7 +48,6 @@ const CardDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           Swal.fire({
             title: "Watch list added successfully",

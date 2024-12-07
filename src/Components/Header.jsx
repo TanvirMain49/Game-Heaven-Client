@@ -26,15 +26,16 @@ const Header = () => {
       });
   };
 
-  const isHomePage = location.pathname === "/";
+  const isTransparentNavbar =
+    location.pathname === "/"
 
   return (
     <div
       className={`navbar z-10 ${
-        isHomePage
+        isTransparentNavbar
           ? "absolute top-0 left-0 bg-transparent text-white"
           : "bg-white text-black"
-      } shadow-lg py-3 px-32`}
+      } shadow-sm py-3 px-32`}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -56,7 +57,7 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 "
           >
             <NavLink to="/">Home</NavLink>
             <NavLink to="/addReview">Add Review</NavLink>
@@ -72,7 +73,7 @@ const Header = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-4">
+        <ul className="menu menu-horizontal px-1 space-x-4 font-semibold">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/allReviews">All Reviews</NavLink>
           {user && (

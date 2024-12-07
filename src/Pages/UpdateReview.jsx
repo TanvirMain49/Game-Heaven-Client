@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 
 const UpdateReview = () => {
   const review = useLoaderData();
-  console.log(review);
   const {
     _id,
     title,
@@ -51,7 +50,6 @@ const UpdateReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if(data.modifiedCount>0){
             Swal.fire({
               title: "Updated successfully!",

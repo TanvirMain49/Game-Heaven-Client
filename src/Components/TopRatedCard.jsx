@@ -3,7 +3,6 @@ import { MdGames, MdCategory, MdCalendarToday, MdPerson } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const TopRatedCard = ({ review }) => {
-  console.log(review);
   const { _id, title, image, rating, publishingYear, genre, userName } = review;
 
   return (

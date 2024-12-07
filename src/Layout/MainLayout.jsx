@@ -9,7 +9,9 @@ const MainLayout = () => {
         <div className='font-poppins'>
             <Header></Header>
             <Outlet></Outlet>
-            {/* <Footer></Footer> */}
+            <div>
+            <Footer></Footer>
+            </div>
         </div>
     );
 };
