@@ -48,12 +48,20 @@ const CardDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged) {
+        console.log(data);
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Watch list added successfully",
             icon: "success",
           });
           setLiked(true);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Cart is already added",
+          });
+          return;
         }
       });
   };

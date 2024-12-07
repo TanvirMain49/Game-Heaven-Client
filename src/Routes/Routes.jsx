@@ -46,7 +46,7 @@ const router = createBrowserRouter([
           element:<PrivetRoutes>
             <WatchList></WatchList>
           </PrivetRoutes>,
-          loader: ()=> fetch('http://localhost:5000/watchLists')
+          // loader: ()=> fetch('http://localhost:5000/watchLists')
           
         },
         {
