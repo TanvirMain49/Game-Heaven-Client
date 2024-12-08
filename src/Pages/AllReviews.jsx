@@ -8,7 +8,7 @@ const AllReviews = () => {
   const [reviews, setReviews] = useState(loadReviews);
 
   const handleSortRating = () => {
-    console.log(loadReviews);
+
     fetch("https://game-heaven-server.vercel.app/reviews/rating", {
       method: "GET",
     })
@@ -18,7 +18,6 @@ const AllReviews = () => {
       });
   };
   const handleSortYear = () => {
-    console.log(loadReviews);
     fetch("https://game-heaven-server.vercel.app/reviews/year", {
       method: "GET",
     })
@@ -29,7 +28,6 @@ const AllReviews = () => {
   };
 
   const handleFilter = (e) => {
-    console.log(e.target.value);
     const value = e.target.value;
     if (value === "") {
       setReviews(loadReviews);

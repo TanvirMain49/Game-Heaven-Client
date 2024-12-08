@@ -6,11 +6,9 @@ import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 const UpdateReview = () => {
   const reviewLoader = useLoaderData();
-  console.log(reviewLoader);
   const { _id, title, image, rating, publishingYear, genre, description } =
     reviewLoader;
 
-  console.log(_id);
   const { user } = useContext(AuthContext);
   const navigation = useNavigate();
 

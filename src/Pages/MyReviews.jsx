@@ -16,7 +16,6 @@ const MyReviews = () => {
         setMyReviews(data);
       });
   }, [email]);
-  console.log(myReviews);
 
   const handleDelete = (id) => {
     fetch(`https://game-heaven-server.vercel.app/reviews/${id}`, {
