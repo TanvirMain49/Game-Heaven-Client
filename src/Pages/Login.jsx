@@ -64,41 +64,35 @@ const Login = () => {
       {/* form section start */}
       <div className="">
         <div className="card w-full mx-auto">
-          <form onSubmit={handleLogIn} className="card-body">
-            <h1 className="text-2xl font-bold pt-16 pb-4 text-center">
+          <form onSubmit={handleLogIn} className="card-body dark:text-white">
+            <h1 className="text-2xl font-bold pt-16 pb-4 text-center dark:text-white">
               Log in Here!
             </h1>
             <div className="form-control space-y-3">
-              {/* <label className="label">
-                <span className="label-text">Email</span>
-              </label> */}
               <input
                 type="email"
                 placeholder="email"
                 name="email"
-                className="border-y-2 px-3 py-2 my-3"
+                className="border-y-2 px-3 py-3 my-3 dark:bg-black"
                 required
               />
             </div>
             <div className="form-control">
-              {/* <label className="label">
-                <span className="label-text">Password</span>
-              </label> */}
               <input
                 type="password"
                 placeholder="password"
                 name="password"
-                className="border-y-2 px-3 py-2 mb-3"
+                className="border-y-2 px-3 py-3 mb-3 dark:bg-black"
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <a href="#" className="label-text-alt link link-hover dark:text-white">
                   Forgot password?
                 </a>
               </label>
             </div>
             <div className="form-control mt-3 space-y-4">
-              <button className="btn bg-[#FF204E] font-bold text-white">
+              <button className="btn bg-[#FF204E] border-none font-bold text-white">
                 Login
               </button>
               <p className="text-bold text-center">
@@ -112,7 +106,7 @@ const Login = () => {
               </p>
             </div>
             <div className="divider">OR</div>
-            <button onClick={handleGoogle} className="btn bg-[#FF204E] font-bold text-white">
+            <button onClick={handleGoogle} className="btn border-none bg-[#FF204E] font-bold text-white">
               <FaGoogle/>
               Google
             </button>

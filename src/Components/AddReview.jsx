@@ -57,20 +57,20 @@ const AddReview = () => {
       </Link> */}
       <div className="text-center text-[#FF204E]">
         <h1 className="text-5xl font-bold md:px-24 pt-8">Add New Review</h1>
-        <p className="text-base py-6 md:px-80 px-8 text-center text-black">
+        <p className="text-base py-6 md:px-80 px-8 text-center text-black dark:text-white">
           Share your thoughts and experience with your favorite game! Please
           provide a detailed review, rate the game, and select the genre. Your
           feedback helps other gamers make informed decisions.
         </p>
       </div>
-      <div className="max-w-4xl mx-auto p-8 border-2 border-gray-300 mt-8 bg-base-100 rounded-xl mb-20">
+      <div className="max-w-4xl mx-auto p-8 border-2 border-gray-300 dark:bg-neutral-800 mt-8 bg-base-100  rounded-xl mb-20">
         <form
           onSubmit={handleAddReview}
           className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
           {/* User Name*/}
           <div className="col-span-1">
-            <label className="block text-base font-semibold text-gray-700 col-span-2">
+            <label className="block text-base font-semibold text-gray-700 dark:text-white col-span-2">
               User Name
             </label>
             <input
@@ -79,14 +79,14 @@ const AddReview = () => {
               name="name"
               readOnly
               defaultValue={user?.displayName}
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
 
           {/* User Email*/}
           <div>
             <label
-              className="text-base text-gray-700 font-bold"
+              className="text-base text-gray-700 dark:text-white font-bold"
             >
               User Email
             </label>
@@ -96,39 +96,39 @@ const AddReview = () => {
               name="email"
               readOnly
               defaultValue={user?.email}
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
 
           {/* Game Title */}
           <div>
-            <label className="block text-base font-semibold text-gray-700">
+            <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Game Title/ Name
             </label>
             <input
               type="text"
               name="title"
               placeholder="Enter game title"
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
 
           {/* Game Cover Image */}
           <div className="col-span-1">
-            <label className="block text-base font-semibold text-gray-700">
+            <label className="block text-base font-semibold text-gray-900 dark:text-white">
               Game Cover Image (URL)
             </label>
             <input
               type="url"
               name="image"
               placeholder="Enter game cover image URL"
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
 
           {/* Rating */}
           <div>
-            <label className="block text-base font-semibold text-gray-700">
+            <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Rating (1-5)
             </label>
             <input
@@ -137,32 +137,32 @@ const AddReview = () => {
               name="rating"
               min="1"
               max="5"
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
 
           {/* Publishing Year */}
           <div>
-            <label className="block text-base font-semibold text-gray-700">
+            <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Publishing Year
             </label>
             <input
               type="number"
               placeholder="publishingYear"
               name="publishingYear"
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
 
           {/* Genres */}
           <div className="col-span-2">
-            <label className="block text-base font-semibold text-gray-700">
+            <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Genre
             </label>
             <select
               placeholder="genre"
               name="genre"
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             >
               <option value="">Select Genre</option>
               <option value="Action">Action</option>
@@ -174,14 +174,14 @@ const AddReview = () => {
 
           {/* Review Description */}
           <div className="col-span-2">
-            <label className="block text-base font-semibold text-gray-700">
+            <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Review Description
             </label>
             <textarea
               name="description"
               placeholder="Write your detailed review"
               rows="4"
-              className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm md:text-base"
+              className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             ></textarea>
           </div>
 

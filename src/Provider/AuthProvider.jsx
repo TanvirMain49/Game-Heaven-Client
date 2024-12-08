@@ -12,6 +12,7 @@ const AuthProvider = ({children}) => {
     const[loader, setLoader] = useState(true);
     const [forgetEmail, setForgetEmail] = useState(null);
     const[watchList, setWatchList] = useState(null);
+    const[dark, setDark] = useState(false);
 
     // function to create user
     const createUser = (email, password) =>{
@@ -69,7 +70,9 @@ const AuthProvider = ({children}) => {
         user,
         loader,
         setWatchList,
-        watchList
+        watchList,
+        dark,
+        setDark
     }
     return (
         <AuthContext.Provider value={authInfo}>

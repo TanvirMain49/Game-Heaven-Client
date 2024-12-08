@@ -11,3 +11,14 @@
 body{
   overflow-y: scroll;
 }
+*{
+  @apply transition-colors duration-300
+}
+
+a.active{
+  background-color: #FF204E;
+  border-radius: 6px;
+  padding: 9px;
+  color: white;
+  font-weight: 600;
+}

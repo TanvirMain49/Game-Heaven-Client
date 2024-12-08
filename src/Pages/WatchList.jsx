@@ -30,16 +30,16 @@ const WatchList = () => {
     <div className="mb-20">
       <div className="text-center text-[#FF204E]">
         <h1 className="text-4xl font-bold md:px-24 pt-8">Game Watch-list</h1>
-        <p className="text-sm py-6 md:px-72 px-8 text-black">
+        <p className="text-sm py-6 md:px-72 px-8 text-black dark:text-white">
           Stay updated with the most exciting upcoming games. Browse through our
           curated watchlist to discover new titles to look forward to, and keep
           track of your favorites as they launch!
         </p>
       </div>
-      <div className="overflow-x-auto bg-white w-10/12 mx-auto">
+      <div className="overflow-x-auto bg-white dark:bg-black w-10/12 mx-auto mt-8">
         <table className="table-auto w-full border-2 rounded-xl">
           <thead>
-            <tr className="bg-gray-100 text-center *:py-6 *:px-6">
+            <tr className="bg-gray-100 dark:bg-neutral-700 dark:text-white text-center *:py-6 *:px-6">
               <th className="py-2 px-4 border">Title</th>
               <th className="py-2 px-4 border">Image</th>
               <th className="py-2 px-4 border">Rating</th>
@@ -51,9 +51,9 @@ const WatchList = () => {
             {watchList.map((review) => (
               <tr
                 key={review._id}
-                className="border-b hover:bg-gray-50 text-center *:py-3 *:px-3"
+                className="border-b text-center *:py-3 *:px-3"
               >
-                <td className="py-2 px-4 font-bold text-lg">{review.title}</td>
+                <td className="py-2 px-4 font-bold text-lg dark:text-white">{review.title}</td>
                 <td className="py-2 px-4">
                   <img
                     src={review.image}
@@ -61,13 +61,13 @@ const WatchList = () => {
                     className="w-20 h-20 object-cover"
                   />
                 </td>
-                <td className="py-2 mt-6 px-4 font-bold text-base flex justify-center items-center gap-1">
+                <td className="py-2 mt-6 px-4 font-bold text-base flex justify-center items-center gap-1 dark:text-white">
                   {review.rating} <FaStar />
                 </td>
-                <td className="py-2 px-4 font-bold text-base">
+                <td className="py-2 px-4 font-bold text-base dark:text-white">
                   {review.publishingYear}
                 </td>
-                <td className="py-2 px-4 font-bold text-base">
+                <td className="py-2 px-4 font-bold text-base dark:text-white">
                   {review.genre}
                 </td>
               </tr>

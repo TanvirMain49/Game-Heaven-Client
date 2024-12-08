@@ -49,14 +49,14 @@ const MyReviews = () => {
         <h1 className="text-5xl font-bold md:px-24 pt-8">
         Game Reviews
         </h1>
-        <p className="text-base pt-6 pb-12 md:px-72 px-8 text-black">
+        <p className="text-base pt-6 pb-12 md:px-72 px-8 text-black dark:text-white">
         Check out our honest reviews of the latest games. Get a quick overview of gameplay, graphics, and overall experience to help you decide your next gaming adventure.
         </p>
       </div>
-      <div className="overflow-x-auto bg-white mb-20">
+      <div className="overflow-x-auto bg-white dark:bg-black mb-20">
         <table className="table-auto border-2 rounded-xl w-10/12 mx-auto">
           <thead>
-            <tr className="bg-gray-100 text-center *:py-6 *:px-6">
+            <tr className="bg-gray-100 dark:bg-neutral-700 dark:text-white text-center *:py-6 *:px-6">
               <th className="py-2 px-4 border">Title</th>
               <th className="py-2 px-4 border">Image</th>
               <th className="py-2 px-4 border">Rating</th>
@@ -69,7 +69,7 @@ const MyReviews = () => {
             {myReviews.map((review) => (
               <tr
                 key={review._id}
-                className="border-b hover:bg-gray-50 text-center *:py-3 *:px-3"
+                className="border-b dark:text-white text-center *:py-3 *:px-3"
               >
                 <td className="py-2 px-4 font-bold text-lg">{review.title}</td>
                 <td className="py-2 px-4">
@@ -92,14 +92,14 @@ const MyReviews = () => {
                   {/* Delete Button */}
                   <button
                     onClick={() => handleDelete(review._id)}
-                    className="bg-red-600 text-white hover:bg-red-700 btn"
+                    className="bg-red-600 text-white hover:bg-red-700 border-none btn"
                   >
                     <FaTrashAlt className="inline-block mr-1" />
                     Delete
                   </button>
                   <Link
                     to={`/updateReview/${review._id}`}
-                    className="bg-black text-white btn"
+                    className="bg-black dark:bg-white dark:text-black text-white border-none btn"
                   >
                     <FaPen className="inline-block mr-1" />
                     Edit

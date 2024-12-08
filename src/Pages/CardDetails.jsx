@@ -81,7 +81,7 @@ const CardDetails = () => {
 
       {/* Game Card Section */}
       <div>
-        <div className="md:absolute md:top-[40%] top-[60%] md:left-[10%] hero bg-base-200 md:max-w-[80%] mx-auto rounded-xl">
+        <div className="md:absolute md:top-[40%] top-[60%] md:left-[10%] hero bg-base-200 md:max-w-[80%] mx-auto rounded-xl dark:bg-neutral-600 dark:text-white">
           <div className="hero-content gap-8 flex-col lg:flex-row">
             {/* Game Image */}
             <img
@@ -99,26 +99,26 @@ const CardDetails = () => {
                 </h1>
 
                 {/* User Details */}
-                <p className="text-sm text-gray-500 py-2">
+                <p className="text-sm text-gray-500 dark:text-neutral-200 py-2">
                   <span className="font-semibold">Added By:</span> {userName} (
                   {email})
                 </p>
 
                 {/* Game Description */}
-                <p className="text-base text-gray-500 py-3">{description}</p>
+                <p className="text-base text-gray-500 dark:text-neutral-200 py-3">{description}</p>
 
                 {/* Genre, Publishing Year, and Rating */}
                 <div className="flex flex-col gap-3">
-                  <p className="text-base text-gray-500 flex items-center gap-2">
+                  <p className="text-base text-gray-500 dark:text-neutral-200 flex items-center gap-2">
                     <FaGamepad className="text-[#FF204E]" />
                     <span className="font-semibold">Genre:</span> {genre}
                   </p>
-                  <p className="text-base text-gray-500 flex items-center gap-2">
+                  <p className="text-base text-gray-500 dark:text-neutral-200 flex items-center gap-2">
                     <FaCalendarAlt className="text-[#FF204E]" />
                     <span className="font-semibold">Published:</span>{" "}
                     {publishingYear}
                   </p>
-                  <p className="text-base text-gray-500 flex items-center gap-2">
+                  <p className="text-base text-gray-500 dark:text-neutral-200 flex items-center gap-2">
                     <FaStar className="text-orange-400" />
                     <span className="font-semibold">Rating:</span> {rating}
                   </p>
@@ -130,7 +130,7 @@ const CardDetails = () => {
                 <button
                   onClick={() => handleWatchList(_id)}
                   disabled={liked}
-                  className="btn mr-4 md:rounded-full rounded-2xl bg-[#FF204E] text-white"
+                  className="btn mr-4 md:rounded-full rounded-2xl bg-[#FF204E] text-white border-none"
                 >
                   Add To WatchList <MdWatchLater className="text-2xl" />
                 </button>

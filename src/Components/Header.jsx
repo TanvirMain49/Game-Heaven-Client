@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Header = () => {
-  const { user, signOutUser } = useContext(AuthContext);
+  const { user, signOutUser, setDark, dark } = useContext(AuthContext);
   const location = useLocation();
   const navigation = useNavigate();
   const handleLogOut = () => {
@@ -25,16 +25,18 @@ const Header = () => {
         });
       });
   };
+  const handleDarkMod = () =>{
+    setDark(!dark)
+  }
 
-  const isTransparentNavbar =
-    location.pathname === "/"
+  const isTransparentNavbar = location.pathname === "/";
 
   return (
     <div
       className={`navbar z-10 ${
         isTransparentNavbar
           ? "absolute top-0 left-0 bg-transparent text-white"
-          : "bg-white text-black"
+          : "bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white"
       } shadow-sm py-3 px-32`}
     >
       <div className="navbar-start">
@@ -73,7 +75,7 @@ const Header = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-4 font-semibold">
+        <ul className="menu menu-horizontal px-1 space-x-4 font-semibold items-center">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/allReviews">All Reviews</NavLink>
           {user && (
@@ -86,7 +88,13 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="navbar-end gap-3">
+      <div className="navbar-end gap-2">
+        <button onClick={handleDarkMod} className={`form-control`}>
+          <label className="label cursor-pointer">
+            <input type="checkbox" className={`toggle toggle-warning ${dark? "[--tglbg:gray]" : "[--tglbg:white]"}`} defaultChecked />
+
+          </label>
+        </button>
         {user ? (
           <>
             <div className="tooltip tooltip-bottom" data-tip={user.displayName}>

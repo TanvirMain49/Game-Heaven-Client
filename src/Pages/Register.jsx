@@ -76,12 +76,12 @@ const Register = () => {
   };
 
   return (
-    <div className="flex gap-8">
+    <div className="flex  gap-24">
       {/* form section */}
-      <div className="RegisterForm">
+      <div className="RegisterForm pl-20">
         <div className="card w-full mx-auto">
           <form onSubmit={handleRegister} className="card-body">
-            <h1 className="text-2xl font-bold pt-8 pb-4 text-center">
+            <h1 className="text-2xl font-bold pt-8 pb-4 text-center dark:text-white">
               Register Here!
             </h1>
             <div className="form-control space-y-3">
@@ -89,7 +89,7 @@ const Register = () => {
                 type="email"
                 placeholder="name"
                 name="name"
-                className="border-y-2 px-3 py-2 my-2"
+                className="border-y-2 px-3 py-3 my-2 dark:bg-black dark:text-white"
                 required
               />
             </div>
@@ -98,7 +98,7 @@ const Register = () => {
                 type="text"
                 placeholder="photoURL"
                 name="photoURL"
-                className="border-y-2 px-3 py-2 my-2"
+                className="border-y-2 px-3 py-3 my-2 dark:bg-black dark:text-white"
                 required
               />
             </div>
@@ -107,7 +107,7 @@ const Register = () => {
                 type="email"
                 placeholder="email"
                 name="email"
-                className="border-y-2 px-3 py-2 my-2"
+                className="border-y-2 px-3 py-3 my-2 dark:bg-black dark:text-white"
                 required
               />
             </div>
@@ -116,15 +116,15 @@ const Register = () => {
                 type="password"
                 placeholder="password"
                 name="password"
-                className="border-y-2 px-3 py-2 mb-2"
+                className="border-y-2 px-3 py-3 mb-2 dark:bg-black dark:text-white"
                 required
               />
             </div>
             <div className="form-control mt-3 space-y-4">
-              <button className="btn bg-[#FF204E] font-bold text-white">
+              <button className="btn bg-[#FF204E] border-none font-bold text-white">
                 Register
               </button>
-              <p className="text-bold text-center">
+              <p className="text-bold text-center dark:text-white">
                 Do have an account? 
                 <Link
                   to="/login"
@@ -134,11 +134,6 @@ const Register = () => {
                 </Link>
               </p>
             </div>
-            {/* <div className="divider">OR</div>
-            <button onClick={handleGoogle} className="btn bg-[#FF204E] font-bold text-white">
-              <FaGoogle/>
-              Google
-            </button> */}
           </form>
 
         </div>
@@ -146,7 +141,7 @@ const Register = () => {
 
       {/* image section */}
       <div className="">
-        <img src="https://wallpapers-clan.com/wp-content/uploads/2024/07/ghost-of-tsushima-battle-aesthetic-desktop-wallpaper-preview.jpg" alt="" />
+        <img src="https://wallpapers-clan.com/wp-content/uploads/2024/07/ghost-of-tsushima-battle-aesthetic-desktop-wallpaper-preview.jpg" alt=""  className="w-full h-screen object-cover"/>
       </div>
     </div>
   );
