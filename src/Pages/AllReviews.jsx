@@ -48,10 +48,10 @@ const AllReviews = () => {
     <div>
       <div className="rounded-xl pb-4 md:mb-0 mb-8">
         <div className="text-center text-[#FF204E]">
-          <h1 className="text-5xl font-bold md:px-24 pt-8">
+          <h1 className="md:text-5xl text-3xl  font-bold md:px-24 pt-8">
             Discover All Reviews
           </h1>
-          <p className="text-base py-6 md:px-60 px-8 text-center text-black dark:text-white">
+          <p className="md:text-base text-sm md:py-6 py-3 md:px-60 px-3 text-center text-black dark:text-white">
             Explore a world of games through the eyes of our community. From
             timeless classics to the latest releases, find honest opinions,
             detailed ratings, and insights to guide your next gaming adventure.
@@ -78,7 +78,7 @@ const AllReviews = () => {
           placeholder="genre"
           name="genre"
           onClick={handleFilter}
-          className="btn block px-3 py-3 bg-[#FF204E] text-white border-none"
+          className="btn block px-2 py-1 bg-[#FF204E] text-white border-none"
         >
           <option value="all" className="p-2 bg-gray-200 text-black">
             All

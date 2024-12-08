@@ -56,8 +56,8 @@ const AddReview = () => {
         Back to Home
       </Link> */}
       <div className="text-center text-[#FF204E]">
-        <h1 className="text-5xl font-bold md:px-24 pt-8">Add New Review</h1>
-        <p className="text-base py-6 md:px-80 px-8 text-center text-black dark:text-white">
+        <h1 className="md:text-5xl text-4xl font-bold md:px-24 pt-8">Add New Review</h1>
+        <p className="md:text-base text-sm py-6 md:px-80 px-8 text-center text-black dark:text-white">
           Share your thoughts and experience with your favorite game! Please
           provide a detailed review, rate the game, and select the genre. Your
           feedback helps other gamers make informed decisions.
@@ -69,7 +69,7 @@ const AddReview = () => {
           className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
           {/* User Name*/}
-          <div className="col-span-1">
+          <div className="md:col-span-1 col-span-2">
             <label className="block text-base font-semibold text-gray-700 dark:text-white col-span-2">
               User Name
             </label>
@@ -84,7 +84,7 @@ const AddReview = () => {
           </div>
 
           {/* User Email*/}
-          <div>
+          <div className="md:col-span-1 col-span-2">
             <label
               className="text-base text-gray-700 dark:text-white font-bold"
             >
@@ -101,7 +101,7 @@ const AddReview = () => {
           </div>
 
           {/* Game Title */}
-          <div>
+          <div className="md:col-span-1 col-span-2">
             <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Game Title/ Name
             </label>
@@ -114,7 +114,7 @@ const AddReview = () => {
           </div>
 
           {/* Game Cover Image */}
-          <div className="col-span-1">
+          <div className="md:col-span-1 col-span-2">
             <label className="block text-base font-semibold text-gray-900 dark:text-white">
               Game Cover Image (URL)
             </label>
@@ -127,7 +127,7 @@ const AddReview = () => {
           </div>
 
           {/* Rating */}
-          <div>
+          <div className="md:col-span-1 col-span-2">
             <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Rating (1-5)
             </label>
@@ -142,7 +142,7 @@ const AddReview = () => {
           </div>
 
           {/* Publishing Year */}
-          <div>
+          <div className="md:col-span-1 col-span-2">
             <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Publishing Year
             </label>
@@ -155,7 +155,7 @@ const AddReview = () => {
           </div>
 
           {/* Genres */}
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <label className="block text-base font-semibold text-gray-700 dark:text-white">
               Genre
             </label>

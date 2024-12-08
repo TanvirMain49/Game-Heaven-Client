@@ -42,7 +42,7 @@ const Header = () => {
     >
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className={`btn bg-transparent ${isTransparentNavbar? " text-white": "text-black dark:text-white"} border-none  lg:hidden`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -60,19 +60,19 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-1"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-1 text-black dark:text-white space-y-2"
           >
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/addReview">Add Review</NavLink>
-            <NavLink to="/myReview">My Review</NavLink>
-            <NavLink to="/watchList">Game WatchList</NavLink>
+            <NavLink to="/" className="text-black">Home</NavLink>
+            <NavLink to="/addReview" className="text-black">Add Review</NavLink>
+            <NavLink to="/myReview" className="text-black">My Review</NavLink>
+            <NavLink to="/watchList" className="text-black">Game WatchList</NavLink>
           </ul>
         </div>
 
         <Fade triggerOnce="true" direction="left" className="flex items-center">
           <div className="flex items-center">
-            <img src={logo1} alt="logo" className="md:w-20 md:h-20 w-12 h-12" />
-            <a className="btn btn-ghost md:text-xl md:block hidden md:ml-14">Game Heaven</a>
+            <img src={logo1} alt="logo" className="md:w-20 md:h-20 md:block hidden" />
+            <a className="md:text-xl text-lg md:ml-14 font-bold">Game Heaven</a>
           </div>
         </Fade>
       </div>
@@ -93,7 +93,7 @@ const Header = () => {
       </div>
         </Fade>
 
-      <div className="navbar-end items-center md:gap-2 md:ml-0 ml-24">
+      <div className="navbar-end items-center md:gap-2 md:ml-0 ">
         <Fade
           direction="right"
           triggerOnce="true"
@@ -119,12 +119,12 @@ const Header = () => {
                 <img
                   src={user.photoURL}
                   alt=""
-                  className="md:w-16 md:h-16 w-10 h-10 rounded-full border-2 border-green-500 p-1"
+                  className="md:w-16 md:h-16 w-14 h-14 rounded-full border-2 border-green-500 p-1"
                 />
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn bg-[#FF204E] text-white border-none"
+                className="btn bg-[#FF204E] text-white border-none md:w-[50%] w-16 whitespace-nowrap"
               >
                 Log out
               </button>
@@ -139,7 +139,7 @@ const Header = () => {
               </Link>
               <NavLink
                 to="/register"
-                className="btn bg-[#FF204E] text-white border-none md:block hidden"
+                className="btn bg-[#FF204E] text-white border-none pt-4 md:block hidden"
               >
                 Register
               </NavLink>

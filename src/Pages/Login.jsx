@@ -53,7 +53,7 @@ const Login = () => {
   return (
     <div className="flex gap-2">
       {/* img section */}
-      <div className="w-[75%]">
+      <div className="w-[75%] md:block hidden">
         <img
           src="https://wallpapers-clan.com/wp-content/uploads/2024/07/mass-effect-game-character-desktop-wallpaper-preview.jpg"
           alt=""
@@ -65,7 +65,7 @@ const Login = () => {
       <div className="">
         <div className="card w-full mx-auto">
           <form onSubmit={handleLogIn} className="card-body dark:text-white">
-            <h1 className="text-2xl font-bold pt-16 pb-4 text-center dark:text-white">
+            <h1 className="text-2xl font-bold md:pt-16 pb-4 text-center dark:text-white">
               Log in Here!
             </h1>
             <div className="form-control space-y-3">
@@ -106,7 +106,7 @@ const Login = () => {
               </p>
             </div>
             <div className="divider">OR</div>
-            <button onClick={handleGoogle} className="btn border-none bg-[#FF204E] font-bold text-white">
+            <button onClick={handleGoogle} className="btn border-none bg-[#FF204E] font-bold text-white md:mb-0 mb-4">
               <FaGoogle/>
               Google
             </button>

@@ -78,10 +78,10 @@ const Register = () => {
   return (
     <div className="flex  gap-16">
       {/* form section */}
-      <div className="RegisterForm pl-10">
+      <div className="RegisterForm md:pl-10 pl-3">
         <div className="card w-full mx-auto">
           <form onSubmit={handleRegister} className="card-body">
-            <h1 className="text-2xl font-bold pt-8 pb-4 text-center dark:text-white">
+            <h1 className="text-2xl font-bold mb:pt-8 pt-3 pb-4 text-center dark:text-white">
               Register Here!
             </h1>
             <div className="form-control space-y-3">
@@ -140,7 +140,7 @@ const Register = () => {
       </div>
 
       {/* image section */}
-      <div className="">
+      <div className="md:block hidden">
         <img src="https://wallpapers-clan.com/wp-content/uploads/2024/07/ghost-of-tsushima-battle-aesthetic-desktop-wallpaper-preview.jpg" alt=""  className="w-full h-screen object-cover"/>
       </div>
     </div>

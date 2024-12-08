@@ -71,8 +71,8 @@ const CardDetails = () => {
       {/* Header Section */}
       <div className="bg-red-600 rounded-xl md:min-h-80 md:pb-52 pb-4 md:mb-0 mb-8">
         <div className="text-center text-white">
-          <h1 className="text-5xl font-bold md:px-24 pt-8">Game Details</h1>
-          <p className="text-base py-6 md:px-60 px-8 text-center">
+          <h1 className="md:text-5xl text-3xl font-bold md:px-24 pt-8">Game Details</h1>
+          <p className="md:text-base text-sm md:py-6 pt-4 pb-6 md:px-60 px-8 text-center">
             Explore the latest details and insights about your favorite games,
             including ratings, reviews, and more!
           </p>
@@ -86,7 +86,7 @@ const CardDetails = () => {
             {/* Game Image */}
             <img
               src={image}
-              className="max-w-xl max-h-2xl md:p-5 p-16 rounded-lg"
+              className="md:max-w-xl md:max-h-2xl md:p-16 rounded-lg"
               alt={title}
             />
 
@@ -94,7 +94,7 @@ const CardDetails = () => {
             <div>
               <div className="relative">
                 {/* Game Title */}
-                <h1 className="md:text-3xl text-4xl font-bold md:pt-2">
+                <h1 className="md:text-3xl text-2xl font-bold md:pt-2">
                   {title}
                 </h1>
 
@@ -105,7 +105,7 @@ const CardDetails = () => {
                 </p>
 
                 {/* Game Description */}
-                <p className="text-base text-gray-500 dark:text-neutral-200 py-3">{description}</p>
+                <p className="md:text-base text-sm text-gray-500 dark:text-neutral-200 py-3">{description}</p>
 
                 {/* Genre, Publishing Year, and Rating */}
                 <div className="flex flex-col gap-3">

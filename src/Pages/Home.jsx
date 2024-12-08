@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Banner from '../Components/Banner';
 import TopRatedGames from '../Components/TopRatedGames';
 import { Link, useLoaderData } from 'react-router-dom';
 import TopRatedCard from '../Components/TopRatedCard';
 import GetGame from '../Components/GetGame';
 import TrustedCompany from '../Components/TrustedCompany';
+import { AuthContext } from '../Provider/AuthProvider';
+import Loader from '../Components/Loader';
 
 const Home = () => {
     const reviewLoader = useLoaderData();
     const [reviews, setReview] = useState(reviewLoader);
+    if(!reviewLoader){
+        return <Loader></Loader>
+    }
     return (
         <div>
             <Banner></Banner>
