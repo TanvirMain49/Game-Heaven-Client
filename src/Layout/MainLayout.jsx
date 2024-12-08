@@ -12,9 +12,7 @@ const MainLayout = () => {
       <div className={`font-poppins bg-neutral-100 dark:bg-black`}>
         <Header></Header>
         <Outlet></Outlet>
-        <div className="mt-28">
           <Footer></Footer>
-        </div>
       </div>
     </div>
   );

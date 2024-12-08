@@ -13,6 +13,7 @@ const AuthProvider = ({children}) => {
     const [forgetEmail, setForgetEmail] = useState(null);
     const[watchList, setWatchList] = useState(null);
     const[dark, setDark] = useState(false);
+    console.log(dark);
 
     // function to create user
     const createUser = (email, password) =>{

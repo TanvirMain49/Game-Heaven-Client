@@ -76,9 +76,9 @@ const Register = () => {
   };
 
   return (
-    <div className="flex  gap-24">
+    <div className="flex  gap-16">
       {/* form section */}
-      <div className="RegisterForm pl-20">
+      <div className="RegisterForm pl-10">
         <div className="card w-full mx-auto">
           <form onSubmit={handleRegister} className="card-body">
             <h1 className="text-2xl font-bold pt-8 pb-4 text-center dark:text-white">
