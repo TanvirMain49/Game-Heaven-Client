@@ -16,6 +16,7 @@ const MyReviews = () => {
         setMyReviews(data);
       });
   }, [email]);
+  console.log(myReviews);
 
   const handleDelete = (id) => {
     fetch(`https://game-heaven-server.vercel.app/reviews/${id}`, {
@@ -24,10 +25,23 @@ const MyReviews = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          setMyReviews(myReviews.filter((review) => review._id !== id));
           Swal.fire({
-            title: "Deleted successfully!",
-            icon: "success",
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setMyReviews(myReviews.filter((review) => review._id !== id));
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            }
           });
         }
       });
@@ -52,12 +66,10 @@ const MyReviews = () => {
           <thead>
             <tr className="bg-gray-100 dark:bg-neutral-700 text-sm md:text-base dark:text-white text-center">
               <th className="py-2 px-4 border">Title</th>
-              <th className="py-2 px-4 border ">Image</th>
-              <th className="py-2 px-4 border ">Rating</th>
-              <th className="py-2 px-4 border ">
-                Published Year
-              </th>
-              <th className="py-2 px-4 border ">Genre</th>
+              <th className="py-2 px-4 border">Image</th>
+              <th className="py-2 px-4 border">Rating</th>
+              <th className="py-2 px-4 border">Published Year</th>
+              <th className="py-2 px-4 border">Genre</th>
               <th className="py-2 px-4 border">Action</th>
             </tr>
           </thead>
@@ -97,7 +109,7 @@ const MyReviews = () => {
                 </td>
 
                 {/* Action */}
-                <td className="py-2 px-4 flex flex-col md:flex-row items-center md:space-x-2 space-y-2 md:space-y-0">
+                <td className="py-2 px-4 flex flex-col md:flex-row items-center md:mt-3 mt-0 md:space-x-2 space-y-2 md:space-y-0">
                   {/* Delete Button */}
                   <button
                     onClick={() => handleDelete(review._id)}

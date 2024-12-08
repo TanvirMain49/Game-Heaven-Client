@@ -66,9 +66,10 @@ const router = createBrowserRouter([
         {
           path:'/updateReview/:id',
           element:<UpdateReview></UpdateReview>,
-          loader: ({params})=> fetch(`https://game-heaven-server.vercel.app/reviews/${params.id}`)
-          
-          
+          loader: ({params})=> {
+            console.log(params.id);
+            return fetch(`https://game-heaven-server.vercel.app/reviews/${params.id}`)
+          } 
         },
       ]
     },

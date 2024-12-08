@@ -51,10 +51,6 @@ const AddReview = () => {
   };
   return (
     <div className="">
-      {/* <Link to="/" className="btn bg-[#FF204E] text-white border-none font-bold md:ml-[20.5%] mt-8">
-        <FaArrowAltCircleLeft/>
-        Back to Home
-      </Link> */}
       <div className="text-center text-[#FF204E]">
         <h1 className="md:text-5xl text-4xl font-bold md:px-24 pt-8">Add New Review</h1>
         <p className="md:text-base text-sm py-6 md:px-80 px-8 text-center text-black dark:text-white">
@@ -62,6 +58,10 @@ const AddReview = () => {
           provide a detailed review, rate the game, and select the genre. Your
           feedback helps other gamers make informed decisions.
         </p>
+        <Link to="/" className="btn bg-[#FF204E] text-white border-none font-bold md:mt-4 mt-2">
+        <FaArrowAltCircleLeft/>
+        Back to Home
+      </Link>
       </div>
       <div className="max-w-4xl mx-auto p-8 border-2 border-gray-300 dark:bg-neutral-800 mt-8 bg-base-100  rounded-xl mb-20">
         <form
@@ -137,6 +137,7 @@ const AddReview = () => {
               name="rating"
               min="1"
               max="5"
+              step="0.1"
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
@@ -165,10 +166,18 @@ const AddReview = () => {
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             >
               <option value="">Select Genre</option>
-              <option value="Action">Action</option>
-              <option value="RPG">RPG</option>
-              <option value="Adventure">Adventure</option>
+              <option value="Action">Action Adventure</option>
+              <option value="RPG">First person shooter</option>
+              <option value="Adventure">Simulation</option>
               <option value="Strategy">Strategy</option>
+              <option value="Strategy">Sports</option>
+              <option value="Strategy">Sports</option>
+              <option value="Strategy">Open World</option>
+              <option value="Strategy">MMORPGS</option>
+              <option value="Strategy">Strategic</option>
+              <option value="Strategy">Racing</option>
+              <option value="Strategy">Music/Rhythm</option>
+              <option value="Strategy">Card/Board Games</option>
             </select>
           </div>
 

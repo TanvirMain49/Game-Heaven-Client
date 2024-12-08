@@ -80,21 +80,19 @@ const AllReviews = () => {
           onClick={handleFilter}
           className="btn block px-2 py-1 bg-[#FF204E] text-white border-none"
         >
-          <option value="all" className="p-2 bg-gray-200 text-black">
-            All
-          </option>
-          <option value="Action" className="p-2 bg-gray-200 text-black">
-            Action
-          </option>
-          <option value="RPG" className="p-2 bg-gray-200 text-black">
-            RPG
-          </option>
-          <option value="Adventure" className="p-2 bg-gray-200 text-black">
-            Adventure
-          </option>
-          <option value="Strategy" className="p-2 bg-gray-200 text-black">
-            Strategy
-          </option>
+          <option value="">All</option>
+              <option value="Action">Action Adventure</option>
+              <option value="RPG">First person shooter</option>
+              <option value="Adventure">Simulation</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Strategy">Sports</option>
+              <option value="Strategy">Sports</option>
+              <option value="Strategy">Open World</option>
+              <option value="Strategy">MMORPGS</option>
+              <option value="Strategy">Strategic</option>
+              <option value="Strategy">Racing</option>
+              <option value="Strategy">Music/Rhythm</option>
+              <option value="Strategy">Card/Board Games</option>
         </select>
       </div>
       <div className="grid grid-col-1 md:grid-cols-3 gap-8 w-10/12 mx-auto my-12 items-center justify-center">
