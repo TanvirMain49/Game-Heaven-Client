@@ -23,16 +23,16 @@ const GetGame = () => {
   return (
     <div className="py-16 bg-gray-100 dark:bg-gray-900">
       <div className="text-center mb-12">
-        <h1 className="mb-4 font-bold text-5xl text-red-600">
+        <h1 className="mb-4 font-bold md:text-5xl text-3xl text-red-600">
           Amazing Game Deals
         </h1>
-        <Typography color="blue-gray" className="text-xl dark:text-gray-300">
+        <p color="blue-gray" className="md:text-xl md:px-0 px-5 text-sm dark:text-gray-300">
           Check out the hottest discounts on your favorite games. Grab them before they're gone!
-        </Typography>
+        </p>
       </div>
 
       <div className="overflow-hidden">
-        <Marquee direction="right" gradient={false} speed={150} pauseOnHover>
+        <Marquee direction="right" gradient={false} speed={200} pauseOnHover>
           {games.map((game) => (
             <div key={game.id} className="mr-8">
               <Card className="w-96 mb-8 bg-white dark:bg-black shadow-lg">

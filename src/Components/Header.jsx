@@ -38,7 +38,7 @@ const Header = () => {
         isTransparentNavbar
           ? "absolute top-0 left-0 bg-transparent text-white"
           : "bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white"
-      } shadow-sm py-3 px-32`}
+      } shadow-sm py-3 md:px-32`}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -60,7 +60,7 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 "
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-1"
           >
             <NavLink to="/">Home</NavLink>
             <NavLink to="/addReview">Add Review</NavLink>
@@ -71,8 +71,8 @@ const Header = () => {
 
         <Fade triggerOnce="true" direction="left" className="flex items-center">
           <div className="flex items-center">
-            <img src={logo1} alt="logo" className="w-20 h-20 absolute" />
-            <a className="btn btn-ghost text-xl ml-14">Game Heaven</a>
+            <img src={logo1} alt="logo" className="md:w-20 md:h-20 w-12 h-12" />
+            <a className="btn btn-ghost md:text-xl md:block hidden md:ml-14">Game Heaven</a>
           </div>
         </Fade>
       </div>
@@ -93,13 +93,13 @@ const Header = () => {
       </div>
         </Fade>
 
-      <div className="navbar-end items-center gap-2">
+      <div className="navbar-end items-center md:gap-2 md:ml-0 ml-24">
         <Fade
           direction="right"
           triggerOnce="true"
           className="flex items-center gap-2"
         >
-          <button onClick={handleDarkMod} className={`form-control`}>
+          <button onClick={handleDarkMod} className='form-control'>
             <label className="label cursor-pointer">
               <input
                 type="checkbox"
@@ -119,7 +119,7 @@ const Header = () => {
                 <img
                   src={user.photoURL}
                   alt=""
-                  className="w-16 h-16 rounded-full border-2 border-green-500 p-1"
+                  className="md:w-16 md:h-16 w-10 h-10 rounded-full border-2 border-green-500 p-1"
                 />
               </div>
               <button
@@ -133,13 +133,13 @@ const Header = () => {
             <>
               <Link
                 to="/login"
-                className="btn bg-[#FF204E] text-white border-none"
+                className="btn bg-[#FF204E] text-white border-none md:w-[50%] w-20"
               >
                 Log in
               </Link>
               <NavLink
                 to="/register"
-                className="btn bg-[#FF204E] text-white border-none"
+                className="btn bg-[#FF204E] text-white border-none md:block hidden"
               >
                 Register
               </NavLink>
