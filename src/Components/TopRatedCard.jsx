@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import { FcRating } from "react-icons/fc";
 import { MdGames, MdCategory, MdCalendarToday, MdPerson } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ const TopRatedCard = ({ review }) => {
   const { _id, title, image, rating, publishingYear, genre, userName } = review;
 
   return (
+    <Fade triggerOnce="true">
     <div className="w-full max-w-sm overflow-hidden bg-white dark:bg-neutral-900 rounded-lg hover:shadow-lg border border-gray-300 dark:border-[#FF204E]">
       <img src={image} className="h-72 w-full object-cover" alt={title} />
 
@@ -59,6 +61,7 @@ const TopRatedCard = ({ review }) => {
         Explore Details
       </Link>
     </div>
+    </Fade>
   );
 };
 

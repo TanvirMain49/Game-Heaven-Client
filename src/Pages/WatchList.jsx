@@ -10,7 +10,7 @@ const WatchList = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/watchLists/${user.email}`, {
+      fetch(`https://game-heaven-server.vercel.app/watchLists/${user.email}`, {
         method: "GET",
       })
         .then((res) => res.json())

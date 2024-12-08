@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo1 from "../assets/logo1.png";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 const Header = () => {
   const { user, signOutUser, setDark, dark } = useContext(AuthContext);
@@ -25,9 +26,9 @@ const Header = () => {
         });
       });
   };
-  const handleDarkMod = () =>{
-    setDark(!dark)
-  }
+  const handleDarkMod = () => {
+    setDark(!dark);
+  };
 
   const isTransparentNavbar = location.pathname === "/";
 
@@ -68,65 +69,83 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className="flex items-center">
-          <img src={logo1} alt="logo" className="w-20 h-20 absolute" />
-          <a className="btn btn-ghost text-xl ml-14">Game Heaven</a>
-        </div>
+        <Fade triggerOnce="true" direction="left" className="flex items-center">
+          <div className="flex items-center">
+            <img src={logo1} alt="logo" className="w-20 h-20 absolute" />
+            <a className="btn btn-ghost text-xl ml-14">Game Heaven</a>
+          </div>
+        </Fade>
       </div>
 
+        <Fade cascade damping={0.2} triggerOnce="true">
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-4 font-semibold items-center">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/allReviews">All Reviews</NavLink>
-          {user && (
+          <ul className="menu menu-horizontal md:pr-12 space-x-4 font-semibold items-center">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/allReviews">All Reviews</NavLink>
+            {user && (
+                <div className="space-x-4">
+                  <NavLink to="/addReview">Add Review</NavLink>
+                  <NavLink to="/myReview">My Review</NavLink>
+                  <NavLink to="/watchList">Game WatchList</NavLink>
+                </div>
+            )}
+          </ul>
+      </div>
+        </Fade>
+
+      <div className="navbar-end items-center gap-2">
+        <Fade
+          direction="right"
+          triggerOnce="true"
+          className="flex items-center gap-2"
+        >
+          <button onClick={handleDarkMod} className={`form-control`}>
+            <label className="label cursor-pointer">
+              <input
+                type="checkbox"
+                className={`toggle toggle-warning ${
+                  dark ? "[--tglbg:gray]" : "[--tglbg:white]"
+                }`}
+                defaultChecked
+              />
+            </label>
+          </button>
+          {user ? (
             <>
-              <NavLink to="/addReview">Add Review</NavLink>
-              <NavLink to="/myReview">My Review</NavLink>
-              <NavLink to="/watchList">Game WatchList</NavLink>
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user.displayName}
+              >
+                <img
+                  src={user.photoURL}
+                  alt=""
+                  className="w-16 h-16 rounded-full border-2 border-green-500 p-1"
+                />
+              </div>
+              <button
+                onClick={handleLogOut}
+                className="btn bg-[#FF204E] text-white border-none"
+              >
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="btn bg-[#FF204E] text-white border-none"
+              >
+                Log in
+              </Link>
+              <NavLink
+                to="/register"
+                className="btn bg-[#FF204E] text-white border-none"
+              >
+                Register
+              </NavLink>
             </>
           )}
-        </ul>
-      </div>
-
-      <div className="navbar-end gap-2">
-        <button onClick={handleDarkMod} className={`form-control`}>
-          <label className="label cursor-pointer">
-            <input type="checkbox" className={`toggle toggle-warning ${dark? "[--tglbg:gray]" : "[--tglbg:white]"}`} defaultChecked />
-
-          </label>
-        </button>
-        {user ? (
-          <>
-            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-              <img
-                src={user.photoURL}
-                alt=""
-                className="w-16 h-16 rounded-full border-2 border-green-500 p-1"
-              />
-            </div>
-            <button
-              onClick={handleLogOut}
-              className="btn bg-[#FF204E] text-white border-none"
-            >
-              Log out
-            </button>
-          </>
-        ) : (
-          <>
-            <Link
-              to="/login"
-              className="btn bg-[#FF204E] text-white border-none"
-            >
-              Log in
-            </Link>
-            <NavLink
-              to="/register"
-              className="btn bg-[#FF204E] text-white border-none"
-            >
-              Register
-            </NavLink>
-          </>
-        )}
+        </Fade>
       </div>
     </div>
   );

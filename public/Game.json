@@ -1,0 +1,59 @@
+[
+    {
+      "id": "1",
+      "gameName": "Call of Duty: Modern Warfare",
+      "discount": "50% OFF",
+      "originalPrice": "$59.99",
+      "finalPrice": "$29.99",
+      "imageUrl": "https://images6.alphacoders.com/101/1018514.jpg"
+    },
+    {
+      "id": "2",
+      "gameName": "The Witcher 3: Wild Hunt",
+      "discount": "40% OFF",
+      "originalPrice": "$39.99",
+      "finalPrice": "$23.99",
+      "imageUrl": "https://wallpapers.com/images/featured/the-witcher-3-wild-hunt-background-fmctiy6vyhh9jih5.jpg"
+    },
+    {
+      "id": "3",
+      "gameName": "Assassin's Creed Valhalla",
+      "discount": "30% OFF",
+      "originalPrice": "$49.99",
+      "finalPrice": "$34.99",
+      "imageUrl": "https://w0.peakpx.com/wallpaper/833/372/HD-wallpaper-valhalla-assassin-s-creed.jpg"
+    },
+    {
+      "id": "4",
+      "gameName": "Cyberpunk 2077",
+      "discount": "60% OFF",
+      "originalPrice": "$59.99",
+      "finalPrice": "$23.99",
+      "imageUrl": "https://assets1.ignimgs.com/2019/08/27/cp77-kv-en-1566871767337.jpg"
+    },
+    {
+      "id": "5",
+      "gameName": "Red Dead Redemption 2",
+      "discount": "25% OFF",
+      "originalPrice": "$59.99",
+      "finalPrice": "$44.99",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBFRI2m98w0LhfVEXKK7J0HbgrHSZWZgj9jw&s"
+    },
+    {
+      "id": "6",
+      "gameName": "Minecraft",
+      "discount": "15% OFF",
+      "originalPrice": "$29.99",
+      "finalPrice": "$25.49",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy9IMjLbAziGC3awaVavZ1RCUl8qZdd2T21A&s"
+    },
+    {
+      "id": "7",
+      "gameName": "Overwatch 2",
+      "discount": "50% OFF",
+      "originalPrice": "$39.99",
+      "finalPrice": "$19.99",
+      "imageUrl": "https://images5.alphacoders.com/132/1327221.png"
+    }
+  ]
+  

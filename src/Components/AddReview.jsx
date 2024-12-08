@@ -33,7 +33,7 @@ const AddReview = () => {
     // console.log(review);
 
     //send data to the server and get response
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://game-heaven-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

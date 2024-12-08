@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         {
           path:'/',
           element:<Home></Home>,
-          loader: ()=> fetch('http://localhost:5000/reviews')
+          loader: ()=> fetch('https://game-heaven-server.vercel.app/reviews/home')
         },
         {
           path:'/addReview',
@@ -38,15 +38,16 @@ const router = createBrowserRouter([
         },
         {
           path:'/reviews/:id',
-          element:<CardDetails></CardDetails>,
-          loader:({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+          element:<PrivetRoutes>
+            <CardDetails></CardDetails>
+          </PrivetRoutes>,
+          loader:({params})=> fetch(`https://game-heaven-server.vercel.app/reviews/${params.id}`)
         },
         {
           path:'/watchList',
           element:<PrivetRoutes>
             <WatchList></WatchList>
           </PrivetRoutes>,
-          // loader: ()=> fetch('http://localhost:5000/watchLists')
           
         },
         {
@@ -59,13 +60,13 @@ const router = createBrowserRouter([
         {
           path:'/allReviews',
           element:<AllReviews></AllReviews>,
-          loader: ()=> fetch('http://localhost:5000/reviews')
+          loader: ()=> fetch('https://game-heaven-server.vercel.app/reviews')
           
         },
         {
           path:'/updateReview/:id',
           element:<UpdateReview></UpdateReview>,
-          loader: ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+          loader: ({params})=> fetch(`https://game-heaven-server.vercel.app/reviews/${params.id}`)
           
           
         },

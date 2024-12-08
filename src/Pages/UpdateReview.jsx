@@ -41,7 +41,7 @@ const UpdateReview = () => {
     };
 
     //send data to the server and get response
-    fetch(`http://localhost:5000/updateReview/${_id}`, {
+    fetch(`https://game-heaven-server.vercel.app/updateReview/${_id}`, {
       method: "PUT",
       headers:{
         "content-type": "application/json"

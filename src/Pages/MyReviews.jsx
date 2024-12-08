@@ -11,7 +11,7 @@ const MyReviews = () => {
   // console.log(email);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews/${email}`, {
+    fetch(`https://game-heaven-server.vercel.app/myReviews/${email}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -22,13 +22,13 @@ const MyReviews = () => {
   // console.log(myReviews);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/reviews/${id}`, {
+    fetch(`https://game-heaven-server.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          fetch(`http://localhost:5000/myReviews/${email}`, {
+          fetch(`https://game-heaven-server.vercel.app/myReviews/${email}`, {
             method: "GET",
           })
             .then((res) => res.json())
