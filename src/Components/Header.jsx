@@ -72,7 +72,7 @@ const Header = () => {
         <Fade triggerOnce="true" direction="left" className="flex items-center">
           <div className="flex items-center">
             <img src={logo1} alt="logo" className="md:w-20 md:h-20 md:block hidden" />
-            <a className="md:text-xl text-lg md:ml-14 font-bold">Game Heaven</a>
+            <a className="md:text-xl text-lg font-bold">Game Heaven</a>
           </div>
         </Fade>
       </div>
