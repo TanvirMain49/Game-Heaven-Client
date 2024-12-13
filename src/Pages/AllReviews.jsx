@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllReviewCard from "../Components/AllReviewCard";
 import { FaSortDown } from "react-icons/fa";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AllReviews = () => {
   const loadReviews = useLoaderData();
+  const{setLoader} = useContext(AuthContext);
   const [reviews, setReviews] = useState(loadReviews);
 
   const handleSortRating = () => {
@@ -18,6 +20,7 @@ const AllReviews = () => {
       });
   };
   const handleSortYear = () => {
+    setLoader(true);
     fetch("https://game-heaven-server.vercel.app/reviews/year", {
       method: "GET",
     })
@@ -25,6 +28,7 @@ const AllReviews = () => {
       .then((data) => {
         setReviews(data);
       });
+      setLoader(false)
   };
 
   const handleFilter = (e) => {
@@ -41,6 +45,10 @@ const AllReviews = () => {
     const filteredReview = loadReviews.filter((review) => review.genre === value);
     setReviews(filteredReview);
   };
+
+  // if(reviews.length === 0){
+  //   return <h3 className="text-center text-5xl font-bold mb-[40%] mt-[20%]">No data Available</h3>
+  // }
 
   return (
     <div>
@@ -78,19 +86,18 @@ const AllReviews = () => {
           onClick={handleFilter}
           className="btn block px-2 py-1 bg-[#FF204E] text-white border-none"
         >
-          <option value="">All</option>
-              <option value="Action">Action Adventure</option>
-              <option value="RPG">First person shooter</option>
-              <option value="Adventure">Simulation</option>
+              <option value="">Select Category</option>
+              <option value="all">All</option>
+              <option value="Action Adventure">Action Adventure</option>
+              <option value="First person shooter">First person shooter</option>
+              <option value="Simulation">Simulation</option>
               <option value="Strategy">Strategy</option>
-              <option value="Strategy">Sports</option>
-              <option value="Strategy">Sports</option>
-              <option value="Strategy">Open World</option>
-              <option value="Strategy">MMORPGS</option>
-              <option value="Strategy">Strategic</option>
-              <option value="Strategy">Racing</option>
-              <option value="Strategy">Music/Rhythm</option>
-              <option value="Strategy">Card/Board Games</option>
+              <option value="Sports">Sports</option>
+              <option value="Open World">Open World</option>
+              <option value="MMORPGS">MMORPGS</option>
+              <option value="Racing">Racing</option>
+              <option value="Music">Music/Rhythm</option>
+              <option value="Card">Card/Board Games</option>
         </select>
       </div>
       <div className="grid grid-col-1 md:grid-cols-3 gap-8 w-10/12 mx-auto my-12 items-center justify-center">

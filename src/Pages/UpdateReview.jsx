@@ -179,18 +179,16 @@ const UpdateReview = () => {
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm dark:bg-transparent dark:text-white"
             >
               <option value="">Select Genre</option>
-              <option value="Action">Action Adventure</option>
-              <option value="RPG">First person shooter</option>
-              <option value="Adventure">Simulation</option>
+              <option value="Action Adventure">Action Adventure</option>
+              <option value="First person shooter">First person shooter</option>
+              <option value="Simulation">Simulation</option>
               <option value="Strategy">Strategy</option>
-              <option value="Strategy">Sports</option>
-              <option value="Strategy">Sports</option>
-              <option value="Strategy">Open World</option>
-              <option value="Strategy">MMORPGS</option>
-              <option value="Strategy">Strategic</option>
-              <option value="Strategy">Racing</option>
-              <option value="Strategy">Music/Rhythm</option>
-              <option value="Strategy">Card/Board Games</option>
+              <option value="Sports">Sports</option>
+              <option value="Open World">Open World</option>
+              <option value="MMORPGS">MMORPGS</option>
+              <option value="Racing">Racing</option>
+              <option value="Music">Music/Rhythm</option>
+              <option value="Card">Card/Board Games</option>
             </select>
           </div>
 

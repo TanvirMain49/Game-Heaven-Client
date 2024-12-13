@@ -11,8 +11,8 @@ import Loader from '../Components/Loader';
 const Home = () => {
     const reviewLoader = useLoaderData();
     const [reviews, setReview] = useState(reviewLoader);
-    if(!reviewLoader){
-        return <Loader></Loader>
+    if(reviewLoader === 0){
+        return <h3 className="text-center text-5xl font-bold mb-[40%] mt-[20%]">No data Available</h3>
     }
     return (
         <div>

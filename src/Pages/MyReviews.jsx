@@ -3,18 +3,22 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { FaPen, FaStar, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { MdCalendarToday, MdCategory } from "react-icons/md";
+import { FcRating } from "react-icons/fc";
 
 const MyReviews = () => {
   const [myReviews, setMyReviews] = useState([]);
-  const { user } = useContext(AuthContext);
+  const { user, setLoader, loader } = useContext(AuthContext);
   const email = user?.email;
 
   useEffect(() => {
+    setLoader(true);
     fetch(`https://game-heaven-server.vercel.app/myReviews/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyReviews(data);
       });
+    setLoader(false);
   }, [email]);
 
   const handleDelete = (id) => {
@@ -31,16 +35,18 @@ const MyReviews = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, delete it!",
           }).then((result) => {
             if (result.isConfirmed) {
+              setLoader(true);
               setMyReviews(myReviews.filter((review) => review._id !== id));
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
-                icon: "success"
+                icon: "success",
               });
             }
+            setLoader(false);
           });
         }
       });
@@ -59,76 +65,70 @@ const MyReviews = () => {
       </div>
 
       {/* Reviews Table */}
-      <div className="overflow-x-auto bg-white dark:bg-black shadow-md rounded-lg mt-8 mb-24">
-        <table className="table-auto w-full border-collapse">
-          {/* Table Head */}
-          <thead>
-            <tr className="bg-gray-100 dark:bg-neutral-700 text-sm md:text-base dark:text-white text-center">
-              <th className="py-2 px-4 border">Title</th>
-              <th className="py-2 px-4 border">Image</th>
-              <th className="py-2 px-4 border">Rating</th>
-              <th className="py-2 px-4 border">Published Year</th>
-              <th className="py-2 px-4 border">Genre</th>
-              <th className="py-2 px-4 border">Action</th>
-            </tr>
-          </thead>
-
-          {/* Table Body */}
-          <tbody>
-            {myReviews.map((review) => (
-              <tr
-                key={review._id}
-                className="border-b text-sm md:text-base text-center dark:text-white"
-              >
-                {/* Title */}
-                <td className="py-2 px-4">{review.title}</td>
-
-                {/* Image */}
-                <td className="py-2 px-4">
-                  <img
-                    src={review.image}
-                    alt={review.title}
-                    className="w-16 h-16 object-cover rounded-lg"
-                  />
-                </td>
-
-                {/* Rating */}
-                <td className="py-2 px-4 flex justify-center items-center gap-1">
-                  {review.rating} <FaStar className="text-yellow-500" />
-                </td>
-
-                {/* Published Year */}
-                <td className="py-2 px-4 ">
-                  {review.publishingYear}
-                </td>
-
-                {/* Genre */}
-                <td className="py-2 px-4">
+      <div className="grid grid-cols-3 gap-6 w-11/12 mx-auto">
+        {myReviews.map((review) => (
+          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+            <div class="relative p-2.5 h-96 overflow-hidden rounded-xl bg-clip-border">
+              <img
+                src={review.image}
+                alt="card-image"
+                class="h-full w-full object-cover rounded-md"
+              />
+            </div>
+            <div class="p-4">
+              <div class="mb-2 flex items-center justify-between">
+                <p class="text-slate-800 text-3xl font-bold">
+                  {review.title}
+                </p>
+                <p class="text-black flex items-center justify-center gap-2 text-xl font-semibold">
+                  {review.rating}
+                  <FaStar className="text-yellow-400"></FaStar>
+                </p>
+              </div>
+              <div className="flex items-center gap-3 mt-3">
+                <MdCategory className="text-[#FF204E] text-xl" />{" "}
+                {/* Genre Icon */}
+                <p className="text-black dark:text-neutral-100  font-semibold text-lg">
+                  Genre:
+                </p>
+                <h1 className="text-base text-black dark:text-neutral-100  font-semibold">
                   {review.genre}
-                </td>
+                </h1>
+              </div>
 
-                {/* Action */}
-                <td className="py-2 px-4 flex flex-col md:flex-row items-center md:mt-3 mt-0 md:space-x-2 space-y-2 md:space-y-0">
-                  {/* Delete Button */}
-                  <button
-                    onClick={() => handleDelete(review._id)}
-                    className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-                  >
-                    <FaTrashAlt />
-                  </button>
+              <div className="flex items-center gap-3 mt-3">
+                <MdCalendarToday className="text-[#FF204E] text-xl" />{" "}
+                {/* Publish Year Icon */}
+                <p className="text-black dark:text-neutral-100  font-semibold text-lg">
+                  Publish Year:
+                </p>
+                <h1 className="text-base text-black dark:text-neutral-100  font-semibold">
+                  {review.publishingYear}
+                </h1>
+              </div>
 
-                  {/* Edit Button */}
-                  <Link
-                    to={`/updateReview/${review._id}`}
-                    className="bg-black dark:bg-white dark:text-black text-white px-4 py-2 rounded hover:bg-gray-700 dark:hover:bg-neutral-200 transition"
-                  >
-                    <FaPen />
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+              <div className="flex space-x-5 mt-4">
+                {/* Edit Button */}
+                <Link
+                  to={`/updateReview/${review._id}`}
+                  className="btn bg-black dark:bg-white dark:text-black text-white px-4 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-700 dark:hover:bg-neutral-200 transition"
+                >
+                  <FaPen />
+                  Edit
+                </Link>
+
+                {/* Delete Button */}
+                <button
+                  onClick={() => handleDelete(review._id)}
+                  className="btn bg-red-600 text-white px-4 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-red-700 transition"
+                >
+                  <FaTrashAlt />
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

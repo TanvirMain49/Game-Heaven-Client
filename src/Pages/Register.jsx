@@ -86,7 +86,7 @@ const Register = () => {
             </h1>
             <div className="form-control space-y-3">
               <input
-                type="email"
+                type="text"
                 placeholder="name"
                 name="name"
                 className="border-y-2 px-3 py-3 my-2 dark:bg-black dark:text-white"

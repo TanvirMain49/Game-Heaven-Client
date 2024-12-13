@@ -8,7 +8,7 @@ const TopRatedCard = ({ review }) => {
 
   return (
     <Fade triggerOnce="true">
-    <div className="w-full max-w-sm overflow-hidden bg-white dark:bg-neutral-900 rounded-lg hover:shadow-lg border border-gray-300 dark:border-[#FF204E]">
+    <div className="w-full max-w-sm overflow-hidden bg-white dark:bg-neutral-900 rounded-lg hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-gray-600 border border-gray-300 dark:border-[#FF204E] transition-transform duration-300 hover:translate-y-[-10px] hover:translate-x-[-20px]">
       <img src={image} className="h-72 w-full object-cover" alt={title} />
 
       {/* Game Title with Icon */}

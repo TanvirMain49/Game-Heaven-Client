@@ -109,6 +109,7 @@ const AddReview = () => {
               type="text"
               name="title"
               placeholder="Enter game title"
+              required
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
@@ -122,6 +123,7 @@ const AddReview = () => {
               type="url"
               name="image"
               placeholder="Enter game cover image URL"
+              required
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
@@ -138,6 +140,7 @@ const AddReview = () => {
               min="1"
               max="5"
               step="0.1"
+              required
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
@@ -151,6 +154,7 @@ const AddReview = () => {
               type="number"
               placeholder="publishingYear"
               name="publishingYear"
+              required
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             />
           </div>
@@ -163,21 +167,20 @@ const AddReview = () => {
             <select
               placeholder="genre"
               name="genre"
+              required
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             >
               <option value="">Select Genre</option>
-              <option value="Action">Action Adventure</option>
-              <option value="RPG">First person shooter</option>
-              <option value="Adventure">Simulation</option>
+              <option value="Action Adventure">Action Adventure</option>
+              <option value="First person shooter">First person shooter</option>
+              <option value="Simulation">Simulation</option>
               <option value="Strategy">Strategy</option>
-              <option value="Strategy">Sports</option>
-              <option value="Strategy">Sports</option>
-              <option value="Strategy">Open World</option>
-              <option value="Strategy">MMORPGS</option>
-              <option value="Strategy">Strategic</option>
-              <option value="Strategy">Racing</option>
-              <option value="Strategy">Music/Rhythm</option>
-              <option value="Strategy">Card/Board Games</option>
+              <option value="Sports">Sports</option>
+              <option value="Open World">Open World</option>
+              <option value="MMORPGS">MMORPGS</option>
+              <option value="Racing">Racing</option>
+              <option value="Music">Music/Rhythm</option>
+              <option value="Card">Card/Board Games</option>
             </select>
           </div>
 
@@ -190,6 +193,7 @@ const AddReview = () => {
               name="description"
               placeholder="Write your detailed review"
               rows="4"
+              required
               className="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-400 dark:bg-neutral-800 rounded-md shadow-sm dark:text-white dark:font-semibold md:text-base"
             ></textarea>
           </div>

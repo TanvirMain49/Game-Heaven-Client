@@ -25,12 +25,16 @@ const WatchList = () => {
     }
   }, [user?.email]);
 
+  if(watchList.length === 0){
+    return <h3 className=" text-center text-5xl font-bold mb-[40%] mt-[20%]">No Watch List have been added</h3>
+  }
+
 
   return (
-    <div className="mb-20">
+    <div className="mb-[20%]">
       <div className="text-center text-[#FF204E]">
         <h1 className="text-4xl font-bold md:px-24 pt-8">Game Watch-list</h1>
-        <p className="text-sm py-6 md:px-72 px-8 text-black dark:text-white">
+        <p className="text-sm py-3 md:px-[26%] px-8 text-black dark:text-white">
           Stay updated with the most exciting upcoming games. Browse through our
           curated watchlist to discover new titles to look forward to, and keep
           track of your favorites as they launch!

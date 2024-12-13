@@ -72,7 +72,8 @@ const AuthProvider = ({children}) => {
         setWatchList,
         watchList,
         dark,
-        setDark
+        setDark,
+        setLoader
     }
     return (
         <AuthContext.Provider value={authInfo}>
