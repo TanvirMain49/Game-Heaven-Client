@@ -22,34 +22,48 @@ const MyReviews = () => {
   }, [email]);
 
   const handleDelete = (id) => {
-    fetch(`https://game-heaven-server.vercel.app/reviews/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
-          }).then((result) => {
-            if (result.isConfirmed) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://game-heaven-server.vercel.app/reviews/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
               setLoader(true);
               setMyReviews(myReviews.filter((review) => review._id !== id));
               Swal.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "Your review has been deleted.",
                 icon: "success",
+              });
+            } else {
+              Swal.fire({
+                title: "Error!",
+                text: "Something went wrong while deleting.",
+                icon: "error",
               });
             }
             setLoader(false);
+          })
+          .catch((error) => {
+            Swal.fire({
+              title: "Error!",
+              text: "An error occurred while deleting the review.",
+              icon: "error",
+            });
+            setLoader(false);
           });
-        }
-      });
+      }
+    });
   };
 
   return (
@@ -65,44 +79,44 @@ const MyReviews = () => {
       </div>
 
       {/* Reviews Table */}
-      <div className="grid grid-cols-3 gap-6 w-11/12 mx-auto">
+      <div className="grid grid-cols-3 gap-6 md:w-11/12 mx-auto">
         {myReviews.map((review) => (
-          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-            <div class="relative p-2.5 h-96 overflow-hidden rounded-xl bg-clip-border">
+          <div className="relative flex flex-col my-6 bg-white dark:bg-neutral-900 shadow-sm border border-slate-200 dark:border-red-600 rounded-lg w-96">
+            <div className="relative p-2.5 h-96 overflow-hidden rounded-xl bg-clip-border">
               <img
                 src={review.image}
                 alt="card-image"
-                class="h-full w-full object-cover rounded-md"
+                className="h-full w-full object-cover rounded-md"
               />
             </div>
-            <div class="p-4">
-              <div class="mb-2 flex items-center justify-between">
-                <p class="text-slate-800 text-3xl font-bold">
+            <div className="p-4">
+              <div className="mb-2 flex items-center justify-between">
+                <p className="text-slate-800 dark:text-white text-3xl font-bold">
                   {review.title}
                 </p>
-                <p class="text-black flex items-center justify-center gap-2 text-xl font-semibold">
+                <p className="text-black dark:text-white flex items-center justify-center gap-2 text-xl font-semibold">
                   {review.rating}
                   <FaStar className="text-yellow-400"></FaStar>
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-3">
-                <MdCategory className="text-[#FF204E] text-xl" />{" "}
+                <MdCategory className="text-[#FF204E] text-xl" />
                 {/* Genre Icon */}
-                <p className="text-black dark:text-neutral-100  font-semibold text-lg">
+                <p className="text-black dark:text-neutral-100 font-semibold text-lg">
                   Genre:
                 </p>
-                <h1 className="text-base text-black dark:text-neutral-100  font-semibold">
+                <h1 className="text-base text-black dark:text-neutral-100 font-semibold">
                   {review.genre}
                 </h1>
               </div>
 
               <div className="flex items-center gap-3 mt-3">
-                <MdCalendarToday className="text-[#FF204E] text-xl" />{" "}
+                <MdCalendarToday className="text-[#FF204E] text-xl" />
                 {/* Publish Year Icon */}
-                <p className="text-black dark:text-neutral-100  font-semibold text-lg">
+                <p className="text-black dark:text-neutral-100 font-semibold text-lg">
                   Publish Year:
                 </p>
-                <h1 className="text-base text-black dark:text-neutral-100  font-semibold">
+                <h1 className="text-base text-black dark:text-neutral-100 font-semibold">
                   {review.publishingYear}
                 </h1>
               </div>

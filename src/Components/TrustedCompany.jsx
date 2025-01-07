@@ -9,9 +9,9 @@ const TrustedCompany = () => {
     Swal.fire("Thank You For clicking. Now, You soon will be member of our community");
   }
   return (
-    <div className="md:py-16 pb-16 text-center">
+    <div className="md:pt-16 text-center">
       <h1 className="font-bold mb-10 md:text-5xl text-3xl dark:text-white">Trusted by Gamers Worldwide</h1>
-      <div className="flex justify-center items-center gap-8 mb-10 space-x-8">
+      <div className="flex justify-center items-center gap-8 space-x-8">
         {dark ? (
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlU6mcQ5dMYvwgAXjg-WsceB-_O4SHch3_KZfifUKHG7TEGuzv6YGa1FjNTmfvMUpwrTg&usqp=CAU"
@@ -65,9 +65,9 @@ const TrustedCompany = () => {
           />
         )}
       </div>
-      <button onClick={handlClick} className="bg-[#FF204E] text-white px-6 py-3 rounded-lg text-lg hover:bg-[#D4183C]">
+      {/* <button onClick={handlClick} className="bg-[#FF204E] text-white px-6 py-3 rounded-lg text-lg hover:bg-[#D4183C]">
         Join the Community
-      </button>
+      </button> */}
     </div>
   );
 };

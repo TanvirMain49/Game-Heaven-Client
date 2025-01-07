@@ -21,7 +21,7 @@ const GetGame = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div className="pt-16 bg-gray-100 dark:bg-gray-900">
       <div className="text-center mb-12">
         <h1 className="mb-4 font-bold md:text-5xl text-3xl text-red-600">
           Amazing Game Deals
@@ -62,9 +62,9 @@ const GetGame = () => {
                 </CardBody>
                 {/* Shop Now Button */}
                 <div className="flex justify-start w-full pb-4 pl-3">
-                  <Link to='/*' className="btn border-2 bg-gray-100 dark:bg-transparent border-[#FF204E] text-[#FF204E] font-bold hover:bg-[#FF204E] hover:text-white transition ease-out duration-300 hover:shadow-gray-400 hover:shadow-lg hover:border-[#FF204E] hover:dark:shadow-none">
+                  <a href='https://store.steampowered.com/' target="_blank" className="btn border-2 bg-gray-100 dark:bg-transparent border-[#FF204E] text-[#FF204E] font-bold hover:bg-[#FF204E] hover:text-white transition ease-out duration-300 hover:shadow-gray-400 hover:shadow-lg hover:border-[#FF204E] hover:dark:shadow-none">
                     Shop Now
-                  </Link>
+                  </a>
                 </div>
               </Card>
             </div>

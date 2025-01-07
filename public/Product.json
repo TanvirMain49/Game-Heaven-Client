@@ -1,0 +1,121 @@
+[
+    {
+        "product_id": "26",
+        "product_title": "Razer Kraken V3 Pro Gaming Headset",
+        "product_image": "https://i.ibb.co.com/ByccwYS/Razer-Kraken-V3-Hyper-Sense-7-1-Surround-Sound-Wired-Gaming-Headset-RZ04-03770100.jpg",
+        "category": "Headphone",
+        "price": 229.99,
+        "description": "Wireless gaming headset with Razer HyperSense haptic feedback.",
+        "Specification": [
+            "THX Spatial Audio",
+            "Razer HyperSense haptic feedback",
+            "24-hour battery life",
+            "Retractable microphone",
+            "Customizable RGB lighting"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "15",
+        "product_title": "Oculus Quest 2 VR Headset",
+        "product_image": "https://i.ibb.co.com/j3g1hKn/Logitech-G-PRO-Gaming-Over-Ear-Headset-for-Oculus-Quest-2-Non-retail-Packaging.jpg",
+        "category": "VR",
+        "price": 399.99,
+        "description": "All-in-one VR headset for immersive gaming and experiences.",
+        "Specification": [
+            "256GB storage",
+            "High-resolution display",
+            "3D positional audio",
+            "Hand tracking and haptic feedback",
+            "Built-in speakers"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "16",
+        "product_title": "Custom Gaming PC (RTX 4080)",
+        "product_image": "https://i.ibb.co.com/xfhdyJJ/TECHNOID-Ultimate-Gaming-PC-Ge-Force-RTX-4080-SUPER-AMD-Ryzen-7-7800-X3-D-64-GB-DDR5-2-TB-SSD-Win-11.jpg",
+        "category": "PC",
+        "price": 2999.99,
+        "description": "High-performance custom gaming PC with the latest NVIDIA graphics.",
+        "Specification": [
+            "NVIDIA RTX 4080 GPU",
+            "Intel Core i9 13th Gen",
+            "32GB DDR5 RAM",
+            "1TB NVMe SSD",
+            "Liquid cooling system"
+        ],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "product_id": "27",
+        "product_title": "Alienware 34-Inch Curved Gaming Monitor",
+        "product_image": "https://i.ibb.co.com/4K8FhJf/ALIENWARE-34-CURVED-QD-OLED-GAMING-MONITOR.jpg",
+        "category": "Monitor",
+        "price": 999.99,
+        "description": "Ultra-wide curved gaming monitor with 144Hz refresh rate and 1ms response time.",
+        "Specification": [
+            "3440 x 1440 resolution",
+            "144Hz refresh rate",
+            "1ms response time",
+            "NVIDIA G-Sync",
+            "HDR support"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "21",
+        "product_title": "Oculus Quest 2 VR Headset",
+        "product_image": "https://i.ibb.co.com/ZBf8hk2/ANNAPRO-Head-Strap-for-Meta-Oculus-Quest-2-Replacement-Strap-for-Oculus-Quest-2-Elite-Strap-Adjustab.jpg",
+        "category": "VR",
+        "price": 399.99,
+        "description": "All-in-one VR headset for immersive gaming and experiences.",
+        "Specification": [
+            "256GB storage",
+            "High-resolution display",
+            "3D positional audio",
+            "Hand tracking and haptic feedback",
+            "Built-in speakers"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "25",
+        "product_title": "Samsung Odyssey G7 27-Inch Curved Gaming Monitor",
+        "product_image": "https://i.ibb.co.com/0y2MLYk/Buy-49-Inch-Odyssey-G5-Curved-Gaming-Monitor-Samsung-UK.jpg",
+        "category": "Monitor",
+        "price": 699.99,
+        "description": "27-inch curved gaming monitor with QHD resolution and 240Hz refresh rate.",
+        "Specification": [
+            "2560 x 1440 QHD resolution",
+            "240Hz refresh rate",
+            "Curved 1000R",
+            "NVIDIA G-Sync and FreeSync",
+            "HDR600 support"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "30",
+        "product_title": "Logitech G923 Racing Wheel",
+        "product_image": "https://i.ibb.co.com/PQQhFr6/Buy-LOGITECH-G923-Xbox-PC-Racing-Wheel-Pedals-Driving-Force-Shifter-Bundle-Currys.jpg",
+        "category": "Gaming",
+        "price": 399.99,
+        "description": "TrueForce racing wheel for enhanced simulation gaming experience.",
+        "Specification": [
+            "TrueForce force feedback",
+            "24-point adjustable dial",
+            "Responsive pedals",
+            "Compatible with PlayStation, Xbox, and PC",
+            "Programmable buttons"
+        ],
+        "availability": true,
+        "rating": 4.8
+    }
+]
