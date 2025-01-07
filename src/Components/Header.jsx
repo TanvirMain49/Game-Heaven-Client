@@ -41,9 +41,9 @@ const Header = () => {
     <div
       className={`navbar z-10 ${
         isTransparentNavbar
-          ? "absolute top-0 left-0 bg-transparent text-white"
-          : "bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white"
-      } shadow-sm py-3 md:px-32`}
+          ? "absolute top-0 left-0 bg-transparent backdrop-blur-sm bg-opacity-45 shadow-lg text-gray-300"
+          : " bg-white/50 backdrop-blur-lg bg-opacity-45 shadow-lg text-black dark:bg-neutral-900 dark:text-white"
+      } shadow-sm py-1 rounded-lg`}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -76,7 +76,7 @@ const Header = () => {
             <NavLink to="/" className="text-black">
               Home
             </NavLink>
-            <NavLink to="/addReview" className="text-black">
+            <NavLink to="/addReview" className="text-black ">
               Add Review
             </NavLink>
             <NavLink to="/myReview" className="text-black">
@@ -103,13 +103,13 @@ const Header = () => {
       <Fade cascade damping={0.2} triggerOnce="true">
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal md:pr-12 space-x-4 font-semibold items-center">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/allReviews">All Reviews</NavLink>
+            <NavLink to="/" className="hover:text-black">Home</NavLink>
+            <NavLink to="/allReviews" className="hover:text-black">All Reviews</NavLink>
             {user && (
               <div className="space-x-4">
-                <NavLink to="/addReview">Add Review</NavLink>
-                <NavLink to="/myReview">My Review</NavLink>
-                <NavLink to="/watchList">Game WatchList</NavLink>
+                <NavLink to="/addReview" className="hover:text-black">Add Review</NavLink>
+                <NavLink to="/myReview" className="hover:text-black">My Review</NavLink>
+                <NavLink to="/watchList" className="hover:text-black">Game WatchList</NavLink>
               </div>
             )}
           </ul>

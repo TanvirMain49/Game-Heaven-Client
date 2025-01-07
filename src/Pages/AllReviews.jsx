@@ -100,7 +100,7 @@ const AllReviews = () => {
               <option value="Card">Card/Board Games</option>
         </select>
       </div>
-      <div className="grid grid-col-1 md:grid-cols-3 gap-8 w-10/12 mx-auto my-12 items-center justify-center">
+      <div className="grid grid-col-1 md:grid-cols-4 gap-6 w-11/12 mx-auto my-12 items-center justify-center">
         {reviews.length === 0 ? (
           <div className="text-center text-gray-500 text-lg">
             No reviews available

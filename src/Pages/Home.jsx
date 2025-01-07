@@ -18,7 +18,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <TopRatedGames></TopRatedGames>
-            <div data-aos="zoom-in" className='grid grid-col-1 md:grid-cols-3 gap-8 w-10/12 mx-auto my-12 items-center justify-center'>
+            <div data-aos="zoom-in" className='grid grid-col-1 md:grid-cols-4 gap-8 w-11/12 mx-auto my-12 items-center justify-center'>
                 {
                     reviews.map(review =><TopRatedCard key={review._id} review={review}></TopRatedCard>)
                 }

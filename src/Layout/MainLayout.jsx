@@ -10,7 +10,9 @@ const MainLayout = () => {
   return (
     <div className={`${dark && "dark"}`}>
       <div className={`font-poppins bg-neutral-100 dark:bg-black`}>
-        <Header></Header>
+        <div className="md:w-11/12 mx-auto sticky top-0 z-50">
+          <Header></Header>
+        </div>
         <Outlet></Outlet>
           <Footer></Footer>
       </div>

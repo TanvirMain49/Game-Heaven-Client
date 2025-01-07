@@ -1,7 +1,13 @@
 import React, { useContext, useState } from "react";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
-import { FaGamepad, FaCalendarAlt, FaStar, FaAlignLeft, FaArrowAltCircleLeft } from "react-icons/fa";
+import {
+  FaGamepad,
+  FaCalendarAlt,
+  FaStar,
+  FaAlignLeft,
+  FaArrowAltCircleLeft,
+} from "react-icons/fa";
 import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { MdWatchLater } from "react-icons/md";
@@ -81,36 +87,43 @@ const CardDetails = () => {
             to="/"
             className="btn bg-red-500 mb-7 text-base rounded-full text-white whitespace-nowrap border-gray-500"
           >
-            <FaArrowAltCircleLeft></FaArrowAltCircleLeft> 
+            <FaArrowAltCircleLeft></FaArrowAltCircleLeft>
             <p>Back to home</p>
           </Link>
         </div>
       </div>
 
       {/* Game Card Section */}
-      <div className="mb-[10%] mt-3">
-        <div className="hero bg-base-200 md:max-w-[80%] mx-auto rounded-xl dark:bg-neutral-600 dark:text-white">
-          <div className="gap-8 lg:flex-row border-2 border-gray-400 rounded-xl">
-            {/* Game Image */}
+      <div className="mb-[10%] mt-3 border-none">
+        <div className="hero bg-base-200 md:max-w-[91%] mx-auto rounded-xl dark:bg-neutral-600 dark:text-white">
+          <div className="gap-8 lg:flex-row shadow-lg rounded-xl">
             <div>
-              <img src={image} className="w-full h-[600px] object-cover p-16 rounded-xl" alt={title} />
-            </div>
-
-            {/* Game Details */}
-            <div className="md:pl-16 md:pt-4 md:pb-6">
-              <div>
-                {/* Game Title */}
-                <h1 className="md:text-3xl text-2xl font-bold md:pt-2">
+            {/* Game Title and user details*/}
+              <div className="p-6">
+                <h1 className="md:text-3xl text-2xl font-bold">
                   {title}
                 </h1>
 
                 {/* User Details */}
-                <p className="text-sm text-gray-500 dark:text-neutral-200 py-2">
+                <p className="text-sm text-gray-500 dark:text-neutral-200 ">
                   <span className="font-semibold">Added By:</span> {userName} (
                   {email})
                 </p>
+              </div>
 
+              {/* Game Image */}
+              <div>
+                <img
+                  src={image}
+                  className="w-full h-[980px] object-cover rounded-lg"
+                  alt={title}
+                />
+              </div>
+
+              {/* Game Details */}
+              <div className="md:pl-8 md:pt-4 md:pb-6">
                 {/* Game Description */}
+                <p className="md:text-3xl text-2xl font-bold">Review</p>
                 <p className="md:text-base text-sm text-gray-500 dark:text-neutral-200 py-3">
                   {description}
                 </p>
@@ -134,7 +147,7 @@ const CardDetails = () => {
               </div>
 
               {/* Buttons */}
-              <div className="py-3 flex items-center">
+              <div className="py-8 pl-8 flex items-center">
                 <button
                   onClick={() => handleWatchList(_id)}
                   disabled={liked}
