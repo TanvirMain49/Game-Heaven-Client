@@ -22,19 +22,29 @@ const Footer = () => {
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 class="mb-6 text-sm font-semibold uppercase text-white">
-                About Us
-              </h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                  <p class="hover:underline">
-                  Our Mission
-                  </p>
+              <a href="home" class="mb-8 text-sm font-semibold uppercase text-white">
+                Link
+              </a>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium space-y-2 mt-4">
+                <li >
+                  <a class="hover:underline">
+                  Home
+                  </a>
                 </li>
                 <li>
-                  <p class="hover:underline">
-                    Our Vision
-                  </p>
+                  <a class="hover:underline">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a class="hover:underline">
+                    Top game
+                  </a>
+                </li>
+                <li>
+                  <Link to='/allReviews' class="hover:underline">
+                    All reviews
+                  </Link>
                 </li>
               </ul>
             </div>

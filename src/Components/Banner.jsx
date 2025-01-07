@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
   return (
-    <Carousel className="rounded-none">
+    <Carousel id="home" className="rounded-none">
       <div className="relative h-full w-full">
         <img
           src="https://images7.alphacoders.com/419/thumb-1920-419788.jpg"
